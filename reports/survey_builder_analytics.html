@@ -1926,39 +1926,6 @@
                 <div class="stat-bar-label">&gt; 10 seconds</div>
                 <div class="stat-bar-fill" style="width: 15.09%;">8</div>
             </div>
-            <h3 id="deepseek-edit-section">Edit Benchmark Performance</h3>
-            <div class="info-card">
-                <h3>Edit Excel Sheet Section (What We Did and Tested)</h3>
-                <p><strong>File:</strong> Edit_Endpoints_Benchmark.xlsx</p>
-                <p><strong>Execution scope:</strong> 304 isolated benchmark runs = 8 scenarios × 38 base threads</p>
-                <h4>What we tested:</h4>
-                <ul>
-                    <li>update_small</li>
-                    <li>update_large</li>
-                    <li>delete_question_middle</li>
-                    <li>delete_question_first</li>
-                    <li>delete_question_invalid</li>
-                    <li>delete_page_valid</li>
-                    <li>delete_page_zero</li>
-                    <li>delete_page_out_of_range</li>
-                </ul>
-                <h4>What we validated per run:</h4>
-                <ul>
-                    <li>HTTP status correctness (expected_status vs status_code)</li>
-                    <li>Structural before/after checks (questions_before/after, pages_before/after)</li>
-                    <li>Plan integrity (plan_version_before/after, sequential spec IDs)</li>
-                    <li>Scenario assertions (assertions_passed, assertions_failed)</li>
-                    <li>Runtime latency (duration_sec)</li>
-                </ul>
-                <h4>Edit benchmark results:</h4>
-                <ul>
-                    <li>Overall pass rate: 51.32%</li>
-                    <li>Fully stable scenarios (100%): update_small, delete_question_invalid, delete_page_valid, delete_page_out_of_range</li>
-                    <li>Partially stable: delete_question_middle (10.53%)</li>
-                    <li>Unstable (0%): update_large, delete_question_first, delete_page_zero</li>
-                    <li>Avg edit operation duration: 3.32s (median 2.135s)</li>
-                </ul>
-            </div>
         </section>
 
         <section>
@@ -2029,18 +1996,6 @@
                 <li>Controller diversity exists, but long-tail controllers are rare (calendar, url)</li>
                 <li>Trends are based on first-half vs second-half of this single test run (not long-term production telemetry)</li>
             </ul>
-        </section>
-
-        <section>
-            <h2 id="deepseek-rules-section">Rules/Logic Generation Analysis</h2>
-            <div class="comparison">
-                <div class="comparison-card">
-                    <h3>Rule Generation Stats</h3>
-                    <ul>
-                        <li>0 generated surveys with detectable rules/logic keys</li>
-                    </ul>
-                </div>
-            </div>
         </section>
 
         <section>
