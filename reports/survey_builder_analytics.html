@@ -2148,20 +2148,29 @@
             <h2 class="modal-title">Writer Agent</h2>
             <div class="modal-section">
                 <h3>Role:</h3>
-                <p>Creates draft rules using AI</p>
+                <p>Creates draft survey questions using AI</p>
             </div>
             <div class="modal-section">
                 <h3>How it works:</h3>
-                <p>Uses an LLM to generate rules based on:</p>
+                <p>Uses an LLM to generate fully rendered survey questions based on:</p>
                 <ul>
-                    <li>The Planner's guidance</li>
-                    <li>Survey question details</li>
+                    <li>The Planner's survey plan (title, type, language)</li>
+                    <li>Question specifications (question_type, intent, required, options_hint) OR section_brief</li>
+                    <li>Writer brief guidance (if provided)</li>
                     <li>User instructions (if provided)</li>
+                </ul>
+                <p>Generates:</p>
+                <ul>
+                    <li>Question text</li>
+                    <li>Options (for radio, checkbox_list, dropdown_list, rank)</li>
+                    <li>Scales (for scale, star_rating)</li>
+                    <li>Validation rules</li>
+                    <li>Skip logic (when logically implied)</li>
                 </ul>
             </div>
             <div class="modal-section">
                 <h3>Output:</h3>
-                <p>Draft rules (may contain errors)</p>
+                <p>Draft questions in JSON format (may contain errors like missing options, type mismatches, invalid scales)</p>
             </div>
         </div>
     </div>
@@ -2172,21 +2181,33 @@
             <h2 class="modal-title">Critic Agent</h2>
             <div class="modal-section">
                 <h3>Role:</h3>
-                <p>Validates the draft rules</p>
+                <p>Validates draft questions deterministically</p>
             </div>
             <div class="modal-section">
                 <h3>How it works:</h3>
-                <p>Checks:</p>
+                <p>Performs deterministic checks (no LLM calls) on:</p>
                 <ul>
-                    <li>Question IDs are valid</li>
-                    <li>Operators match question types</li>
-                    <li>Rule structure is correct</li>
-                    <li>Values match available options</li>
+                    <li>Spec coverage: all spec_ids appear exactly once, no missing/duplicate/extra spec_ids</li>
+                    <li>Question IDs: validates spec_id matches between plan and rendered questions</li>
+                    <li>Type matching: question_type matches the spec</li>
+                    <li>Required field matching: required flag matches the spec</li>
+                    <li>Options validation: radio has ≥2 options, checkbox_list has ≥1, checkbox has exactly 1</li>
+                    <li>Scale validation: scale questions have valid min/max integers, star_rating has scale (1-5)</li>
+                    <li>Validation rules: email has format="email", required questions have validation.required=true, scale questions have matching min_value/max_value</li>
+                    <li>Page names: rendered pages match plan pages</li>
                 </ul>
+                <p>Optionally applies safe auto-fixes when auto_fix=True (e.g., adds missing options, fixes required flags, adds default scales)</p>
             </div>
             <div class="modal-section">
                 <h3>Output:</h3>
-                <p>A report listing valid rules and errors in invalid ones</p>
+                <p>Report containing:</p>
+                <ul>
+                    <li>passed: boolean (true if no errors)</li>
+                    <li>issue_count: number of issues found</li>
+                    <li>issues: list of issue objects with severity (error/warning/info), code, message, spec_id, suggestion</li>
+                    <li>summary: 2-5 bullet summary of review</li>
+                    <li>patched_questions: optionally fixed questions (if auto_fix=True and fixes were applied)</li>
+                </ul>
             </div>
         </div>
     </div>
@@ -2197,21 +2218,30 @@
             <h2 class="modal-title">Fixer Agent</h2>
             <div class="modal-section">
                 <h3>Role:</h3>
-                <p>Automatically repairs invalid rules</p>
+                <p>Automatically repairs invalid questions using AI</p>
             </div>
             <div class="modal-section">
                 <h3>How it works:</h3>
-                <p>Applies fixes such as:</p>
+                <p>Uses an LLM to fix issues found by the Critic Agent. Applies fixes such as:</p>
                 <ul>
-                    <li>Replacing invalid operators with valid ones</li>
-                    <li>Fixing invalid question IDs</li>
-                    <li>Correcting data type mismatches</li>
-                    <li>Removing invalid option values</li>
+                    <li>MISSING_SPEC_ID: adds missing question for the spec_id</li>
+                    <li>DUPLICATE_SPEC_ID: removes duplicates, keeps one</li>
+                    <li>EXTRA_SPEC_ID: removes questions not in plan (or preserves them during updates)</li>
+                    <li>TYPE_MISMATCH: updates question_type to match spec</li>
+                    <li>REQUIRED_MISMATCH: updates required field to match spec</li>
+                    <li>RADIO_NO_OPTIONS, CHECKBOX_LIST_NO_OPTIONS: adds appropriate options</li>
+                    <li>CHECKBOX_OPTION_MISSING: adds exactly 1 option (e.g., "I agree")</li>
+                    <li>SCALE_INVALID: fixes scale min/max values and labels</li>
+                    <li>STAR_RATING_SCALE_MISSING: adds scale with min=1, max=5</li>
+                    <li>EMAIL_FORMAT_MISSING: adds validation.format="email"</li>
+                    <li>VALIDATION_REQUIRED_MISSING: adds validation.required=true</li>
+                    <li>VALIDATION_SCALE_MISSING: adds validation min_value/max_value matching scale</li>
                 </ul>
+                <p>Preserves all questions without issues (keeps them unchanged)</p>
             </div>
             <div class="modal-section">
                 <h3>Output:</h3>
-                <p>Fixed rules (unfixable rules are dropped)</p>
+                <p>Fixed questions in JSON format matching the same schema as input (unfixable questions may be dropped if parsing fails, otherwise original questions are returned)</p>
             </div>
         </div>
     </div>
