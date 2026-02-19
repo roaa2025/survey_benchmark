@@ -1,0 +1,9 @@
+[build]
+  publish = "reports"
+  functions = "netlify/functions"
+
+[[redirects]]
+  from = "/"
+  to = "/survey_builder_analytics.html"
+  status = 200
+

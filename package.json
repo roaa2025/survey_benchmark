@@ -1,0 +1,13 @@
+{
+  "name": "survey-builder-analytics",
+  "version": "1.0.0",
+  "description": "Survey Builder Analytics Dashboard",
+  "scripts": {
+    "build": "echo 'No build step required for static site'"
+  },
+  "dependencies": {
+    "archiver": "^6.0.1"
+  },
+  "devDependencies": {}
+}
+
