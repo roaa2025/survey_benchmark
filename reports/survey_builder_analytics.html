@@ -174,6 +174,24 @@
             border-radius: 12px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.3);
             min-width: 300px;
+            position: relative;
+        }
+
+        .compare-icon {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+            color: #e0e0e0;
+            transition: color 0.3s, transform 0.2s;
+            z-index: 10;
+        }
+
+        .compare-icon:hover {
+            color: #3b82f6;
+            transform: scale(1.1);
         }
 
         .model-selector label {
@@ -947,6 +965,11 @@
             </div>
         </div>
         <div class="model-selector">
+            <svg class="compare-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" title="Compare Models">
+                <circle cx="9" cy="12" r="5"/>
+                <circle cx="15" cy="12" r="5"/>
+                <line x1="9" y1="12" x2="15" y2="12"/>
+            </svg>
             <label for="modelSelect">Choose Model:</label>
             <select id="modelSelect" onchange="handleModelSelection()">
                 <option value="">-- Select a model --</option>
@@ -2341,6 +2364,13 @@
                 analyticsDashboard.classList.remove('show');
                 deepseekDashboard.classList.remove('show');
             }
+        }
+
+        const compareIcon = document.querySelector('.compare-icon');
+        if (compareIcon) {
+            compareIcon.addEventListener('click', function() {
+                window.location.href = '../dashboard/survey-builder-analytics.html';
+            });
         }
 
         // Set last updated date

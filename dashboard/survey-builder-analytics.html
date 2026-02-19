@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Builder Analytics Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background: #1a1a1a;
+            color: #e0e0e0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+        .model-comparison-card {
+            background: #2a2a2a;
+            border-radius: 8px;
+            padding: 24px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        }
+        .reconciliation-list {
+            list-style: none;
+            padding: 0;
+        }
+        .reconciliation-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #404040;
+        }
+        .reconciliation-list li:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body class="p-8">
+    <div class="max-w-7xl mx-auto">
+        <header class="mb-8">
+            <h1 class="text-4xl font-bold mb-2">Model Comparison</h1>
+            <p class="text-gray-400">GPT-4o vs DeepSeek Analysis</p>
+            <p class="text-sm text-gray-500 mt-2">Last updated: <span id="lastUpdated">Loading...</span></p>
+        </header>
+
+        <div id="dashboardContent">
+            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                <div class="model-comparison-card">
+                    <h3 class="text-2xl font-bold mb-4 text-blue-400">GPT-4o Summary</h3>
+                    <div id="gptSummary" class="text-gray-300"></div>
+                </div>
+                <div class="model-comparison-card">
+                    <h3 class="text-2xl font-bold mb-4 text-green-400">DeepSeek Summary</h3>
+                    <div id="deepseekSummary" class="text-gray-300"></div>
+                </div>
+            </div>
+            <div class="model-comparison-card mb-6">
+                <h3 class="text-xl font-semibold mb-4">Reconciliation</h3>
+                <ul id="reconciliationList" class="reconciliation-list"></ul>
+            </div>
+            <div class="model-comparison-card">
+                <h3 class="text-xl font-semibold mb-4">Recommended Reporting Structure</h3>
+                <div class="text-gray-300">
+                    <p class="mb-2"><strong>Data Source 1:</strong> App-log structural telemetry (EVAL_METRICS events)</p>
+                    <p class="mb-2"><strong>Data Source 2:</strong> Evaluation workbook narrative summaries (GPT vs DeepSeek)</p>
+                    <p class="text-sm text-gray-500 mt-4">Both sources should be clearly labeled and cross-referenced for comprehensive analysis.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('lastUpdated').textContent = new Date().toLocaleString();
+            renderModelComparison();
+        });
+
+        function renderModelComparison() {
+            document.getElementById('gptSummary').innerHTML = `
+                <p class="mb-2">GPT-4o completed the evaluation in approximately <strong>62 minutes</strong>.</p>
+                <p class="mb-2">Processed <strong>62 threads</strong> with comprehensive coverage.</p>
+                <p class="mb-2">Strong performance in question generation and rule validation.</p>
+            `;
+
+            document.getElementById('deepseekSummary').innerHTML = `
+                <p class="mb-2">DeepSeek completed the evaluation in approximately <strong>seconds</strong> (significantly faster).</p>
+                <p class="mb-2">Processed <strong>57 planned cases</strong> (5 fewer than GPT-4o).</p>
+                <p class="mb-2">Efficient processing with comparable quality metrics.</p>
+            `;
+
+            const reconciliationList = document.getElementById('reconciliationList');
+            reconciliationList.innerHTML = `
+                <li><strong>Time difference:</strong> GPT-4o took ~62 minutes vs DeepSeek completed in seconds</li>
+                <li><strong>Thread count difference:</strong> GPT-4o processed 62 threads vs DeepSeek processed 57 planned cases (5 thread difference)</li>
+                <li><strong>Rules coverage:</strong> Both models show similar rules validation patterns, with GPT-4o having slightly more comprehensive coverage</li>
+            `;
+        }
+    </script>
+</body>
+</html>
+
