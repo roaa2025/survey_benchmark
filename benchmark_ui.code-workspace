@@ -1,0 +1,18 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "C:/Users/roaa.alashqar/Desktop/eval draft data"
+		}
+	],
+	"settings": {
+		"workbench.editorAssociations": {
+			"*.html": "default"
+		},
+		"files.associations": {
+			"*.html": "html"
+		}
+	}
+}

@@ -31,6 +31,12 @@ def index():
     return send_from_directory('reports', 'survey_builder_analytics.html')
 
 
+@app.route('/dashboard/<path:filename>')
+def serve_dashboard(filename):
+    """Serve dashboard files"""
+    return send_from_directory('dashboard', filename)
+
+
 @app.route('/draft_data.zip')
 def serve_draft_data_zip():
     """Serve the pre-built draft data zip file"""
