@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Survey Builder Analytics Dashboard</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
     <style>
         body {
             background: #1a1a1a;
@@ -28,6 +29,42 @@
         .reconciliation-list li:last-child {
             border-bottom: none;
         }
+        .kpi-card {
+            background: #2a2a2a;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .kpi-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+        }
+        .kpi-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #3b82f6;
+        }
+        .kpi-label {
+            font-size: 0.875rem;
+            color: #a0a0a0;
+            margin-top: 8px;
+        }
+        .chart-container {
+            background: #2a2a2a;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 24px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        }
+        .warning-badge {
+            background: #7c2d12;
+            border-left: 4px solid #f59e0b;
+            padding: 16px;
+            border-radius: 4px;
+            margin-bottom: 16px;
+            color: #fbbf24;
+        }
     </style>
 </head>
 <body class="p-8">
@@ -41,54 +78,174 @@
         <div id="dashboardContent">
             <div class="grid md:grid-cols-2 gap-6 mb-6">
                 <div class="model-comparison-card">
-                    <h3 class="text-2xl font-bold mb-4 text-blue-400">GPT-4o Summary</h3>
+                    <h3 class="text-2xl font-bold mb-4 text-blue-400">GPT Summary (Scenario-runtime narrative)</h3>
                     <div id="gptSummary" class="text-gray-300"></div>
                 </div>
                 <div class="model-comparison-card">
-                    <h3 class="text-2xl font-bold mb-4 text-green-400">DeepSeek Summary</h3>
+                    <h3 class="text-2xl font-bold mb-4 text-green-400">DeepSeek Summary (Per-call latency + workbook snapshot)</h3>
                     <div id="deepseekSummary" class="text-gray-300"></div>
                 </div>
             </div>
+
             <div class="model-comparison-card mb-6">
-                <h3 class="text-xl font-semibold mb-4">Reconciliation</h3>
-                <ul id="reconciliationList" class="reconciliation-list"></ul>
+                <h3 class="text-xl font-semibold mb-4">Performance reconciliation</h3>
+                <div id="performanceReconciliation" class="text-gray-300"></div>
             </div>
-            <div class="model-comparison-card">
-                <h3 class="text-xl font-semibold mb-4">Recommended Reporting Structure</h3>
-                <div class="text-gray-300">
-                    <p class="mb-2"><strong>Data Source 1:</strong> App-log structural telemetry (EVAL_METRICS events)</p>
-                    <p class="mb-2"><strong>Data Source 2:</strong> Evaluation workbook narrative summaries (GPT vs DeepSeek)</p>
-                    <p class="text-sm text-gray-500 mt-4">Both sources should be clearly labeled and cross-referenced for comprehensive analysis.</p>
+
+            <div class="model-comparison-card mb-6">
+                <h3 class="text-xl font-semibold mb-4">Rules coverage reconciliation</h3>
+                <div id="rulesReconciliation" class="text-gray-300"></div>
+            </div>
+
+            <div class="model-comparison-card mb-6">
+                <h3 class="text-xl font-semibold mb-4">Recommended reporting structure</h3>
+                <div id="reportingStructure" class="text-gray-300"></div>
+            </div>
+
+            <div class="model-comparison-card mb-6">
+                <h3 class="text-xl font-semibold mb-4">Telemetry Evidence</h3>
+                <div id="telemetryKPIs" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-4"></div>
+                <div id="telemetryWarning" class="mb-6"></div>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="chart-container">
+                        <h4 class="text-lg font-semibold mb-4">Flow Counts</h4>
+                        <canvas id="flowCountsChart"></canvas>
+                    </div>
+                    <div class="chart-container">
+                        <h4 class="text-lg font-semibold mb-4">Invalid Type Breakdown</h4>
+                        <canvas id="invalidTypeChart"></canvas>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
     <script>
+        let charts = {};
+
         document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('lastUpdated').textContent = new Date().toLocaleString();
             renderModelComparison();
+            renderTelemetryEvidence();
         });
 
         function renderModelComparison() {
             document.getElementById('gptSummary').innerHTML = `
-                <p class="mb-2">GPT-4o completed the evaluation in approximately <strong>62 minutes</strong>.</p>
-                <p class="mb-2">Processed <strong>62 threads</strong> with comprehensive coverage.</p>
-                <p class="mb-2">Strong performance in question generation and rule validation.</p>
+                <p class="mb-3">Reported "<strong>~62 minutes</strong>" reflects end-to-end benchmark scenario runtime (multi-stage pipeline: generation + validation + evaluation loops), not single survey generation latency.</p>
+                <p class="mb-3">it shows <strong>62 unique threads</strong>, <strong>173 EVAL_METRICS events</strong>, dominated by <strong>fast_generate (167 events)</strong>.</p>
+                <p class="mb-3">Data integrity looks strong: <strong>0 duplicate question IDs</strong>, <strong>0 missing required fields</strong>.</p>
+                <p class="mb-0">Main schema gap: unsupported question types, mostly <strong>rank (67)</strong> and rare <strong>heat_map (2)</strong>.</p>
             `;
 
             document.getElementById('deepseekSummary').innerHTML = `
-                <p class="mb-2">DeepSeek completed the evaluation in approximately <strong>seconds</strong> (significantly faster).</p>
-                <p class="mb-2">Processed <strong>57 planned cases</strong> (5 fewer than GPT-4o).</p>
-                <p class="mb-2">Efficient processing with comparable quality metrics.</p>
+                <p class="mb-3">Reports <strong>8.55s avg generation time</strong> (per generation call).</p>
+                <p class="mb-3">Reports <strong>57 planned cases</strong>, <strong>53 completed</strong> (completion rate <strong>92.98%</strong>).</p>
+                <p class="mb-0">Highlights editing benchmark risk: <strong>51.32% pass rate</strong> and identifies clustered failures.</p>
             `;
 
-            const reconciliationList = document.getElementById('reconciliationList');
-            reconciliationList.innerHTML = `
-                <li><strong>Time difference:</strong> GPT-4o took ~62 minutes vs DeepSeek completed in seconds</li>
-                <li><strong>Thread count difference:</strong> GPT-4o processed 62 threads vs DeepSeek processed 57 planned cases (5 thread difference)</li>
-                <li><strong>Rules coverage:</strong> Both models show similar rules validation patterns, with GPT-4o having slightly more comprehensive coverage</li>
+            document.getElementById('performanceReconciliation').innerHTML = `
+                <p class="mb-3"><strong>Minutes vs seconds are different clocks:</strong></p>
+                <ul class="list-disc list-inside mb-3 space-y-2">
+                    <li>GPT timing is scenario runtime (minutes; multi-step evaluation).</li>
+                    <li>DeepSeek timing is single-call generation latency (seconds).</li>
+                </ul>
+                <p class="mb-2"><strong>To compare model speed fairly:</strong></p>
+                <ul class="list-disc list-inside space-y-2">
+                    <li>instrument the same "generation_start → generation_end" timer for both models,</li>
+                    <li>or extract per-call durations from the same log fields.</li>
+                </ul>
             `;
+
+            document.getElementById('rulesReconciliation').innerHTML = `
+                <p class="mb-3">App-log shows only <strong>2 rules-metric events</strong> (limited telemetry coverage), both clean (0 invalid refs / 0 missing conditions/actions).</p>
+                <p class="mb-0">DeepSeek claims rules outputs are missing in the generation JSON snapshot → likely a pipeline/output export gap, not validator failure.</p>
+            `;
+
+            document.getElementById('reportingStructure').innerHTML = `
+                <p class="mb-2"><strong>Data source A:</strong> App-log structural telemetry (EVAL_METRICS: integrity + schema + unsupported types)</p>
+                <p class="mb-2"><strong>Data source B:</strong> Evaluation workbook (LLM-judge quality + per-call latency + edit benchmark outcomes)</p>
+                <p class="mb-0 text-sm text-gray-400 mt-3">Label them separately and cross-reference.</p>
+            `;
+        }
+
+        function renderTelemetryEvidence() {
+            const kpiSection = document.getElementById('telemetryKPIs');
+            const kpis = [
+                { label: 'Unique threads', value: '62' },
+                { label: 'Total metrics events', value: '173' },
+                { label: 'fast_generate events', value: '167' },
+                { label: 'Invalid type total', value: '69' },
+                { label: 'Rank vs heat_map', value: '67 / 2' },
+                { label: 'Rules telemetry events', value: '2', warning: true }
+            ];
+
+            kpiSection.innerHTML = kpis.map(kpi => `
+                <div class="kpi-card ${kpi.warning ? 'border-2 border-yellow-500' : ''}">
+                    <div class="kpi-value">${kpi.value}</div>
+                    <div class="kpi-label">${kpi.label}</div>
+                </div>
+            `).join('');
+
+            const warningSection = document.getElementById('telemetryWarning');
+            warningSection.innerHTML = '<div class="warning-badge"><strong>Rules telemetry coverage limited (2 events) — do not generalize.</strong></div>';
+
+            renderFlowCountsChart();
+            renderInvalidTypeChart();
+        }
+
+        function renderFlowCountsChart() {
+            const ctx = document.getElementById('flowCountsChart').getContext('2d');
+            
+            if (charts.flowCounts) charts.flowCounts.destroy();
+            
+            charts.flowCounts = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['fast_generate', 'update', 'generate_rules', 'generate_questions'],
+                    datasets: [{
+                        label: 'Event Count',
+                        data: [167, 4, 2, 0],
+                        backgroundColor: '#3b82f6',
+                        borderColor: '#2563eb',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: true,
+                    plugins: {
+                        legend: { display: false }
+                    },
+                    scales: {
+                        y: { beginAtZero: true, ticks: { color: '#e0e0e0' }, grid: { color: '#404040' } },
+                        x: { ticks: { color: '#e0e0e0' }, grid: { color: '#404040' } }
+                    }
+                }
+            });
+        }
+
+        function renderInvalidTypeChart() {
+            const ctx = document.getElementById('invalidTypeChart').getContext('2d');
+            
+            if (charts.invalidType) charts.invalidType.destroy();
+            
+            charts.invalidType = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['rank', 'heat_map'],
+                    datasets: [{
+                        data: [67, 2],
+                        backgroundColor: ['#3b82f6', '#10b981']
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: true,
+                    plugins: {
+                        legend: { labels: { color: '#e0e0e0' }, position: 'bottom' }
+                    }
+                }
+            });
         }
     </script>
 </body>
