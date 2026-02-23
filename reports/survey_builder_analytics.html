@@ -1025,6 +1025,10 @@
                 <div class="metric-value">~61m</div>
                 <div class="metric-label">Avg Generation Time</div>
             </div>
+            <div class="metric-card success" id="analyticsCompletionRateCard" style="cursor: pointer;">
+                <div class="metric-value">100%</div>
+                <div class="metric-label">Completion Rate</div>
+            </div>
         </div>
 
         <section>
@@ -2280,6 +2284,48 @@
         </div>
     </div>
 
+    <div class="modal-overlay" id="analyticsCompletionRateModal">
+        <div class="modal-content">
+            <button class="modal-close" id="closeAnalyticsCompletionRateModal">&times;</button>
+            <h2 class="modal-title">Completion Rate</h2>
+            <div class="modal-section">
+                <p>It measures:</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Aspect</th>
+                            <th>Meaning</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Stability</td>
+                            <td>Does the pipeline crash?</td>
+                        </tr>
+                        <tr>
+                            <td>Reliability</td>
+                            <td>Does it return output?</td>
+                        </tr>
+                        <tr>
+                            <td>Infrastructure health</td>
+                            <td>Are there timeouts / exceptions?</td>
+                        </tr>
+                        <tr>
+                            <td>Integration</td>
+                            <td>Do services respond correctly?</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-section">
+                <p><strong>Calculation:</strong></p>
+                <p>Observed successful runs ÷ Observed runs</p>
+                <p>= 62 ÷ 62</p>
+                <p>≈ 100%</p>
+            </div>
+        </div>
+    </div>
+
     <script>
         const plannerNode = document.getElementById('plannerNode');
         const plannerModal = document.getElementById('plannerModal');
@@ -2368,6 +2414,24 @@
         completionRateModal.addEventListener('click', function(e) {
             if (e.target === completionRateModal) {
                 completionRateModal.classList.remove('show');
+            }
+        });
+
+        const analyticsCompletionRateCard = document.getElementById('analyticsCompletionRateCard');
+        const analyticsCompletionRateModal = document.getElementById('analyticsCompletionRateModal');
+        const closeAnalyticsCompletionRateModal = document.getElementById('closeAnalyticsCompletionRateModal');
+
+        analyticsCompletionRateCard.addEventListener('click', function() {
+            analyticsCompletionRateModal.classList.add('show');
+        });
+
+        closeAnalyticsCompletionRateModal.addEventListener('click', function() {
+            analyticsCompletionRateModal.classList.remove('show');
+        });
+
+        analyticsCompletionRateModal.addEventListener('click', function(e) {
+            if (e.target === analyticsCompletionRateModal) {
+                analyticsCompletionRateModal.classList.remove('show');
             }
         });
 
