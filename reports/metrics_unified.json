@@ -1,0 +1,4750 @@
+{
+  "schema_version": "1.0.0",
+  "generated_at": "2026-02-21T10:28:50.215282+00:00",
+  "sources": [
+    {
+      "id": "gpt4o_eval_metrics_all_txt",
+      "type": "telemetry_txt",
+      "runs_count": 34
+    },
+    {
+      "id": "deepseek_eval_excel",
+      "type": "evaluation_excel",
+      "runs_count": 57
+    }
+  ],
+  "runs": [
+    {
+      "run_id": "014835de5ce6a0f4",
+      "source_id": "gpt4o_eval_metrics_all_txt",
+      "model": {
+        "family": "gpt",
+        "name": "gpt-4o",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": null,
+        "thread_id": "thread_1771390855",
+        "language": null,
+        "prompt": {
+          "text": null,
+          "length_chars": null
+        }
+      },
+      "timing": {
+        "duration_ms": null
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": 1,
+        "questions": 7,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": null,
+          "question_quality": null,
+          "survey_coherence": null,
+          "bilingual_alignment": null,
+          "question_page_distribution": null,
+          "controller_appropriateness": null
+        }
+      },
+      "stability": {
+        "status": "success",
+        "telemetry": {
+          "has_duration": false,
+          "has_tokens": false,
+          "has_judge_scores": false
+        }
+      }
+    },
+    {
+      "run_id": "0c2c33e51eea4b25",
+      "source_id": "gpt4o_eval_metrics_all_txt",
+      "model": {
+        "family": "gpt",
+        "name": "gpt-4o",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": null,
+        "thread_id": "thread_1771390855",
+        "language": null,
+        "prompt": {
+          "text": null,
+          "length_chars": null
+        }
+      },
+      "timing": {
+        "duration_ms": null
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": null,
+        "questions": null,
+        "rules": 1,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": null,
+          "question_quality": null,
+          "survey_coherence": null,
+          "bilingual_alignment": null,
+          "question_page_distribution": null,
+          "controller_appropriateness": null
+        }
+      },
+      "stability": {
+        "status": "success",
+        "telemetry": {
+          "has_duration": false,
+          "has_tokens": false,
+          "has_judge_scores": false
+        }
+      }
+    },
+    {
+      "run_id": "930e5f8102ed2863",
+      "source_id": "gpt4o_eval_metrics_all_txt",
+      "model": {
+        "family": "gpt",
+        "name": "gpt-4o",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": null,
+        "thread_id": "bench_smoke_contract2",
+        "language": null,
+        "prompt": {
+          "text": null,
+          "length_chars": null
+        }
+      },
+      "timing": {
+        "duration_ms": null
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": null,
+        "questions": null,
+        "rules": 1,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": null,
+          "question_quality": null,
+          "survey_coherence": null,
+          "bilingual_alignment": null,
+          "question_page_distribution": null,
+          "controller_appropriateness": null
+        }
+      },
+      "stability": {
+        "status": "success",
+        "telemetry": {
+          "has_duration": false,
+          "has_tokens": false,
+          "has_judge_scores": false
+        }
+      }
+    },
+    {
+      "run_id": "1a18b5db6b16c4f1",
+      "source_id": "gpt4o_eval_metrics_all_txt",
+      "model": {
+        "family": "gpt",
+        "name": "gpt-4o",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": null,
+        "thread_id": "bench_full_T1",
+        "language": null,
+        "prompt": {
+          "text": null,
+          "length_chars": null
+        }
+      },
+      "timing": {
+        "duration_ms": null
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": 3,
+        "questions": 15,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": null,
+          "question_quality": null,
+          "survey_coherence": null,
+          "bilingual_alignment": null,
+          "question_page_distribution": null,
+          "controller_appropriateness": null
+        }
+      },
+      "stability": {
+        "status": "success",
+        "telemetry": {
+          "has_duration": false,
+          "has_tokens": false,
+          "has_judge_scores": false
+        }
+      }
+    },
+    {
+      "run_id": "88a8a5687e745919",
+      "source_id": "gpt4o_eval_metrics_all_txt",
+      "model": {
+        "family": "gpt",
+        "name": "gpt-4o",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": null,
+        "thread_id": "bench_full_T10",
+        "language": null,
+        "prompt": {
+          "text": null,
+          "length_chars": null
+        }
+      },
+      "timing": {
+        "duration_ms": null
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": 3,
+        "questions": 20,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": null,
+          "question_quality": null,
+          "survey_coherence": null,
+          "bilingual_alignment": null,
+          "question_page_distribution": null,
+          "controller_appropriateness": null
+        }
+      },
+      "stability": {
+        "status": "success",
+        "telemetry": {
+          "has_duration": false,
+          "has_tokens": false,
+          "has_judge_scores": false
+        }
+      }
+    },
+    {
+      "run_id": "2b0b1ca09db4a6a1",
+      "source_id": "gpt4o_eval_metrics_all_txt",
+      "model": {
+        "family": "gpt",
+        "name": "gpt-4o",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": null,
+        "thread_id": "bench_full_T15",
+        "language": null,
+        "prompt": {
+          "text": null,
+          "length_chars": null
+        }
+      },
+      "timing": {
+        "duration_ms": null
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": 3,
+        "questions": 11,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": null,
+          "question_quality": null,
+          "survey_coherence": null,
+          "bilingual_alignment": null,
+          "question_page_distribution": null,
+          "controller_appropriateness": null
+        }
+      },
+      "stability": {
+        "status": "success",
+        "telemetry": {
+          "has_duration": false,
+          "has_tokens": false,
+          "has_judge_scores": false
+        }
+      }
+    },
+    {
+      "run_id": "661d42b6b6da5ea9",
+      "source_id": "gpt4o_eval_metrics_all_txt",
+      "model": {
+        "family": "gpt",
+        "name": "gpt-4o",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": null,
+        "thread_id": "bench_full_T19",
+        "language": null,
+        "prompt": {
+          "text": null,
+          "length_chars": null
+        }
+      },
+      "timing": {
+        "duration_ms": null
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": 3,
+        "questions": 20,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": null,
+          "question_quality": null,
+          "survey_coherence": null,
+          "bilingual_alignment": null,
+          "question_page_distribution": null,
+          "controller_appropriateness": null
+        }
+      },
+      "stability": {
+        "status": "success",
+        "telemetry": {
+          "has_duration": false,
+          "has_tokens": false,
+          "has_judge_scores": false
+        }
+      }
+    },
+    {
+      "run_id": "0f31852242af18fd",
+      "source_id": "gpt4o_eval_metrics_all_txt",
+      "model": {
+        "family": "gpt",
+        "name": "gpt-4o",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": null,
+        "thread_id": "bench_full_T35",
+        "language": null,
+        "prompt": {
+          "text": null,
+          "length_chars": null
+        }
+      },
+      "timing": {
+        "duration_ms": null
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": 3,
+        "questions": 40,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": null,
+          "question_quality": null,
+          "survey_coherence": null,
+          "bilingual_alignment": null,
+          "question_page_distribution": null,
+          "controller_appropriateness": null
+        }
+      },
+      "stability": {
+        "status": "success",
+        "telemetry": {
+          "has_duration": false,
+          "has_tokens": false,
+          "has_judge_scores": false
+        }
+      }
+    },
+    {
+      "run_id": "5da8d276afb6beef",
+      "source_id": "gpt4o_eval_metrics_all_txt",
+      "model": {
+        "family": "gpt",
+        "name": "gpt-4o",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": null,
+        "thread_id": "bench_full_T38",
+        "language": null,
+        "prompt": {
+          "text": null,
+          "length_chars": null
+        }
+      },
+      "timing": {
+        "duration_ms": null
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": 5,
+        "questions": 60,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": null,
+          "question_quality": null,
+          "survey_coherence": null,
+          "bilingual_alignment": null,
+          "question_page_distribution": null,
+          "controller_appropriateness": null
+        }
+      },
+      "stability": {
+        "status": "success",
+        "telemetry": {
+          "has_duration": false,
+          "has_tokens": false,
+          "has_judge_scores": false
+        }
+      }
+    },
+    {
+      "run_id": "977f3791e7d85eeb",
+      "source_id": "gpt4o_eval_metrics_all_txt",
+      "model": {
+        "family": "gpt",
+        "name": "gpt-4o",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": null,
+        "thread_id": "bench_full_T43",
+        "language": null,
+        "prompt": {
+          "text": null,
+          "length_chars": null
+        }
+      },
+      "timing": {
+        "duration_ms": null
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": 3,
+        "questions": 28,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": null,
+          "question_quality": null,
+          "survey_coherence": null,
+          "bilingual_alignment": null,
+          "question_page_distribution": null,
+          "controller_appropriateness": null
+        }
+      },
+      "stability": {
+        "status": "success",
+        "telemetry": {
+          "has_duration": false,
+          "has_tokens": false,
+          "has_judge_scores": false
+        }
+      }
+    },
+    {
+      "run_id": "500b3d305ccb4421",
+      "source_id": "gpt4o_eval_metrics_all_txt",
+      "model": {
+        "family": "gpt",
+        "name": "gpt-4o",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": null,
+        "thread_id": "bench_full_T45",
+        "language": null,
+        "prompt": {
+          "text": null,
+          "length_chars": null
+        }
+      },
+      "timing": {
+        "duration_ms": null
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": 3,
+        "questions": 12,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": null,
+          "question_quality": null,
+          "survey_coherence": null,
+          "bilingual_alignment": null,
+          "question_page_distribution": null,
+          "controller_appropriateness": null
+        }
+      },
+      "stability": {
+        "status": "success",
+        "telemetry": {
+          "has_duration": false,
+          "has_tokens": false,
+          "has_judge_scores": false
+        }
+      }
+    },
+    {
+      "run_id": "fea779eceadfb17c",
+      "source_id": "gpt4o_eval_metrics_all_txt",
+      "model": {
+        "family": "gpt",
+        "name": "gpt-4o",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": null,
+        "thread_id": "bench_full_T1",
+        "language": null,
+        "prompt": {
+          "text": null,
+          "length_chars": null
+        }
+      },
+      "timing": {
+        "duration_ms": null
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": 3,
+        "questions": 15,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": null,
+          "question_quality": null,
+          "survey_coherence": null,
+          "bilingual_alignment": null,
+          "question_page_distribution": null,
+          "controller_appropriateness": null
+        }
+      },
+      "stability": {
+        "status": "success",
+        "telemetry": {
+          "has_duration": false,
+          "has_tokens": false,
+          "has_judge_scores": false
+        }
+      }
+    },
+    {
+      "run_id": "73b761cd447151f1",
+      "source_id": "gpt4o_eval_metrics_all_txt",
+      "model": {
+        "family": "gpt",
+        "name": "gpt-4o",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": null,
+        "thread_id": "bench_full_T10",
+        "language": null,
+        "prompt": {
+          "text": null,
+          "length_chars": null
+        }
+      },
+      "timing": {
+        "duration_ms": null
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": 3,
+        "questions": 20,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": null,
+          "question_quality": null,
+          "survey_coherence": null,
+          "bilingual_alignment": null,
+          "question_page_distribution": null,
+          "controller_appropriateness": null
+        }
+      },
+      "stability": {
+        "status": "success",
+        "telemetry": {
+          "has_duration": false,
+          "has_tokens": false,
+          "has_judge_scores": false
+        }
+      }
+    },
+    {
+      "run_id": "baba62d4880047e6",
+      "source_id": "gpt4o_eval_metrics_all_txt",
+      "model": {
+        "family": "gpt",
+        "name": "gpt-4o",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": null,
+        "thread_id": "bench_full_T17",
+        "language": null,
+        "prompt": {
+          "text": null,
+          "length_chars": null
+        }
+      },
+      "timing": {
+        "duration_ms": null
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": 3,
+        "questions": 25,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": null,
+          "question_quality": null,
+          "survey_coherence": null,
+          "bilingual_alignment": null,
+          "question_page_distribution": null,
+          "controller_appropriateness": null
+        }
+      },
+      "stability": {
+        "status": "success",
+        "telemetry": {
+          "has_duration": false,
+          "has_tokens": false,
+          "has_judge_scores": false
+        }
+      }
+    },
+    {
+      "run_id": "6eac7de2884fb953",
+      "source_id": "gpt4o_eval_metrics_all_txt",
+      "model": {
+        "family": "gpt",
+        "name": "gpt-4o",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": null,
+        "thread_id": "bench_full_T19",
+        "language": null,
+        "prompt": {
+          "text": null,
+          "length_chars": null
+        }
+      },
+      "timing": {
+        "duration_ms": null
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": 3,
+        "questions": 20,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": null,
+          "question_quality": null,
+          "survey_coherence": null,
+          "bilingual_alignment": null,
+          "question_page_distribution": null,
+          "controller_appropriateness": null
+        }
+      },
+      "stability": {
+        "status": "success",
+        "telemetry": {
+          "has_duration": false,
+          "has_tokens": false,
+          "has_judge_scores": false
+        }
+      }
+    },
+    {
+      "run_id": "533d6fc468f2f4a5",
+      "source_id": "gpt4o_eval_metrics_all_txt",
+      "model": {
+        "family": "gpt",
+        "name": "gpt-4o",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": null,
+        "thread_id": "bench_full_T10",
+        "language": null,
+        "prompt": {
+          "text": null,
+          "length_chars": null
+        }
+      },
+      "timing": {
+        "duration_ms": null
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": 3,
+        "questions": 20,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": null,
+          "question_quality": null,
+          "survey_coherence": null,
+          "bilingual_alignment": null,
+          "question_page_distribution": null,
+          "controller_appropriateness": null
+        }
+      },
+      "stability": {
+        "status": "success",
+        "telemetry": {
+          "has_duration": false,
+          "has_tokens": false,
+          "has_judge_scores": false
+        }
+      }
+    },
+    {
+      "run_id": "1270ce5a8cf843ed",
+      "source_id": "gpt4o_eval_metrics_all_txt",
+      "model": {
+        "family": "gpt",
+        "name": "gpt-4o",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": null,
+        "thread_id": "bench_full_T15",
+        "language": null,
+        "prompt": {
+          "text": null,
+          "length_chars": null
+        }
+      },
+      "timing": {
+        "duration_ms": null
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": 3,
+        "questions": 11,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": null,
+          "question_quality": null,
+          "survey_coherence": null,
+          "bilingual_alignment": null,
+          "question_page_distribution": null,
+          "controller_appropriateness": null
+        }
+      },
+      "stability": {
+        "status": "success",
+        "telemetry": {
+          "has_duration": false,
+          "has_tokens": false,
+          "has_judge_scores": false
+        }
+      }
+    },
+    {
+      "run_id": "8649ec9079ab84dc",
+      "source_id": "gpt4o_eval_metrics_all_txt",
+      "model": {
+        "family": "gpt",
+        "name": "gpt-4o",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": null,
+        "thread_id": "bench_full_T18",
+        "language": null,
+        "prompt": {
+          "text": null,
+          "length_chars": null
+        }
+      },
+      "timing": {
+        "duration_ms": null
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": 3,
+        "questions": 25,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": null,
+          "question_quality": null,
+          "survey_coherence": null,
+          "bilingual_alignment": null,
+          "question_page_distribution": null,
+          "controller_appropriateness": null
+        }
+      },
+      "stability": {
+        "status": "success",
+        "telemetry": {
+          "has_duration": false,
+          "has_tokens": false,
+          "has_judge_scores": false
+        }
+      }
+    },
+    {
+      "run_id": "87ae22bdcf345a37",
+      "source_id": "gpt4o_eval_metrics_all_txt",
+      "model": {
+        "family": "gpt",
+        "name": "gpt-4o",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": null,
+        "thread_id": "bench_full_T19",
+        "language": null,
+        "prompt": {
+          "text": null,
+          "length_chars": null
+        }
+      },
+      "timing": {
+        "duration_ms": null
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": 3,
+        "questions": 20,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": null,
+          "question_quality": null,
+          "survey_coherence": null,
+          "bilingual_alignment": null,
+          "question_page_distribution": null,
+          "controller_appropriateness": null
+        }
+      },
+      "stability": {
+        "status": "success",
+        "telemetry": {
+          "has_duration": false,
+          "has_tokens": false,
+          "has_judge_scores": false
+        }
+      }
+    },
+    {
+      "run_id": "362c7bec44e09278",
+      "source_id": "gpt4o_eval_metrics_all_txt",
+      "model": {
+        "family": "gpt",
+        "name": "gpt-4o",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": null,
+        "thread_id": "bench_full_T28",
+        "language": null,
+        "prompt": {
+          "text": null,
+          "length_chars": null
+        }
+      },
+      "timing": {
+        "duration_ms": null
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": 5,
+        "questions": 50,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": null,
+          "question_quality": null,
+          "survey_coherence": null,
+          "bilingual_alignment": null,
+          "question_page_distribution": null,
+          "controller_appropriateness": null
+        }
+      },
+      "stability": {
+        "status": "success",
+        "telemetry": {
+          "has_duration": false,
+          "has_tokens": false,
+          "has_judge_scores": false
+        }
+      }
+    },
+    {
+      "run_id": "2d7552f1c5cb5908",
+      "source_id": "gpt4o_eval_metrics_all_txt",
+      "model": {
+        "family": "gpt",
+        "name": "gpt-4o",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": null,
+        "thread_id": "bench_full_T35",
+        "language": null,
+        "prompt": {
+          "text": null,
+          "length_chars": null
+        }
+      },
+      "timing": {
+        "duration_ms": null
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": 3,
+        "questions": 40,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": null,
+          "question_quality": null,
+          "survey_coherence": null,
+          "bilingual_alignment": null,
+          "question_page_distribution": null,
+          "controller_appropriateness": null
+        }
+      },
+      "stability": {
+        "status": "success",
+        "telemetry": {
+          "has_duration": false,
+          "has_tokens": false,
+          "has_judge_scores": false
+        }
+      }
+    },
+    {
+      "run_id": "9038031d156f03e3",
+      "source_id": "gpt4o_eval_metrics_all_txt",
+      "model": {
+        "family": "gpt",
+        "name": "gpt-4o",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": null,
+        "thread_id": "bench_full_T38",
+        "language": null,
+        "prompt": {
+          "text": null,
+          "length_chars": null
+        }
+      },
+      "timing": {
+        "duration_ms": null
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": 5,
+        "questions": 60,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": null,
+          "question_quality": null,
+          "survey_coherence": null,
+          "bilingual_alignment": null,
+          "question_page_distribution": null,
+          "controller_appropriateness": null
+        }
+      },
+      "stability": {
+        "status": "success",
+        "telemetry": {
+          "has_duration": false,
+          "has_tokens": false,
+          "has_judge_scores": false
+        }
+      }
+    },
+    {
+      "run_id": "956d3db2d6edebcd",
+      "source_id": "gpt4o_eval_metrics_all_txt",
+      "model": {
+        "family": "gpt",
+        "name": "gpt-4o",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": null,
+        "thread_id": "bench_full_T43",
+        "language": null,
+        "prompt": {
+          "text": null,
+          "length_chars": null
+        }
+      },
+      "timing": {
+        "duration_ms": null
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": 3,
+        "questions": 28,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": null,
+          "question_quality": null,
+          "survey_coherence": null,
+          "bilingual_alignment": null,
+          "question_page_distribution": null,
+          "controller_appropriateness": null
+        }
+      },
+      "stability": {
+        "status": "success",
+        "telemetry": {
+          "has_duration": false,
+          "has_tokens": false,
+          "has_judge_scores": false
+        }
+      }
+    },
+    {
+      "run_id": "540c00ec58a28bd7",
+      "source_id": "gpt4o_eval_metrics_all_txt",
+      "model": {
+        "family": "gpt",
+        "name": "gpt-4o",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": null,
+        "thread_id": "bench_full_BASE_T1",
+        "language": null,
+        "prompt": {
+          "text": null,
+          "length_chars": null
+        }
+      },
+      "timing": {
+        "duration_ms": null
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": 3,
+        "questions": 15,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": null,
+          "question_quality": null,
+          "survey_coherence": null,
+          "bilingual_alignment": null,
+          "question_page_distribution": null,
+          "controller_appropriateness": null
+        }
+      },
+      "stability": {
+        "status": "success",
+        "telemetry": {
+          "has_duration": false,
+          "has_tokens": false,
+          "has_judge_scores": false
+        }
+      }
+    },
+    {
+      "run_id": "e608ccd8bdfcb3af",
+      "source_id": "gpt4o_eval_metrics_all_txt",
+      "model": {
+        "family": "gpt",
+        "name": "gpt-4o",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": null,
+        "thread_id": "bench_full_BASE_T2",
+        "language": null,
+        "prompt": {
+          "text": null,
+          "length_chars": null
+        }
+      },
+      "timing": {
+        "duration_ms": null
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": 3,
+        "questions": 15,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": null,
+          "question_quality": null,
+          "survey_coherence": null,
+          "bilingual_alignment": null,
+          "question_page_distribution": null,
+          "controller_appropriateness": null
+        }
+      },
+      "stability": {
+        "status": "success",
+        "telemetry": {
+          "has_duration": false,
+          "has_tokens": false,
+          "has_judge_scores": false
+        }
+      }
+    },
+    {
+      "run_id": "d068fb3b10725e76",
+      "source_id": "gpt4o_eval_metrics_all_txt",
+      "model": {
+        "family": "gpt",
+        "name": "gpt-4o",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": null,
+        "thread_id": "bench_full_BASE_T3",
+        "language": null,
+        "prompt": {
+          "text": null,
+          "length_chars": null
+        }
+      },
+      "timing": {
+        "duration_ms": null
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": 3,
+        "questions": 15,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": null,
+          "question_quality": null,
+          "survey_coherence": null,
+          "bilingual_alignment": null,
+          "question_page_distribution": null,
+          "controller_appropriateness": null
+        }
+      },
+      "stability": {
+        "status": "success",
+        "telemetry": {
+          "has_duration": false,
+          "has_tokens": false,
+          "has_judge_scores": false
+        }
+      }
+    },
+    {
+      "run_id": "c50ce9abe0d107fb",
+      "source_id": "gpt4o_eval_metrics_all_txt",
+      "model": {
+        "family": "gpt",
+        "name": "gpt-4o",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": null,
+        "thread_id": "bench_full_T1",
+        "language": null,
+        "prompt": {
+          "text": null,
+          "length_chars": null
+        }
+      },
+      "timing": {
+        "duration_ms": null
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": 3,
+        "questions": 15,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": null,
+          "question_quality": null,
+          "survey_coherence": null,
+          "bilingual_alignment": null,
+          "question_page_distribution": null,
+          "controller_appropriateness": null
+        }
+      },
+      "stability": {
+        "status": "success",
+        "telemetry": {
+          "has_duration": false,
+          "has_tokens": false,
+          "has_judge_scores": false
+        }
+      }
+    },
+    {
+      "run_id": "a653e3962f9be4d6",
+      "source_id": "gpt4o_eval_metrics_all_txt",
+      "model": {
+        "family": "gpt",
+        "name": "gpt-4o",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": null,
+        "thread_id": "bench_full_T15",
+        "language": null,
+        "prompt": {
+          "text": null,
+          "length_chars": null
+        }
+      },
+      "timing": {
+        "duration_ms": null
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": 3,
+        "questions": 11,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": null,
+          "question_quality": null,
+          "survey_coherence": null,
+          "bilingual_alignment": null,
+          "question_page_distribution": null,
+          "controller_appropriateness": null
+        }
+      },
+      "stability": {
+        "status": "success",
+        "telemetry": {
+          "has_duration": false,
+          "has_tokens": false,
+          "has_judge_scores": false
+        }
+      }
+    },
+    {
+      "run_id": "4366d12c25391d33",
+      "source_id": "gpt4o_eval_metrics_all_txt",
+      "model": {
+        "family": "gpt",
+        "name": "gpt-4o",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": null,
+        "thread_id": "bench_full_T17",
+        "language": null,
+        "prompt": {
+          "text": null,
+          "length_chars": null
+        }
+      },
+      "timing": {
+        "duration_ms": null
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": 3,
+        "questions": 25,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": null,
+          "question_quality": null,
+          "survey_coherence": null,
+          "bilingual_alignment": null,
+          "question_page_distribution": null,
+          "controller_appropriateness": null
+        }
+      },
+      "stability": {
+        "status": "success",
+        "telemetry": {
+          "has_duration": false,
+          "has_tokens": false,
+          "has_judge_scores": false
+        }
+      }
+    },
+    {
+      "run_id": "9c43fda8d233c34a",
+      "source_id": "gpt4o_eval_metrics_all_txt",
+      "model": {
+        "family": "gpt",
+        "name": "gpt-4o",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": null,
+        "thread_id": "bench_full_T19",
+        "language": null,
+        "prompt": {
+          "text": null,
+          "length_chars": null
+        }
+      },
+      "timing": {
+        "duration_ms": null
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": 3,
+        "questions": 20,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": null,
+          "question_quality": null,
+          "survey_coherence": null,
+          "bilingual_alignment": null,
+          "question_page_distribution": null,
+          "controller_appropriateness": null
+        }
+      },
+      "stability": {
+        "status": "success",
+        "telemetry": {
+          "has_duration": false,
+          "has_tokens": false,
+          "has_judge_scores": false
+        }
+      }
+    },
+    {
+      "run_id": "6efe867b5c01d5c0",
+      "source_id": "gpt4o_eval_metrics_all_txt",
+      "model": {
+        "family": "gpt",
+        "name": "gpt-4o",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": null,
+        "thread_id": "bench_full_T28",
+        "language": null,
+        "prompt": {
+          "text": null,
+          "length_chars": null
+        }
+      },
+      "timing": {
+        "duration_ms": null
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": 3,
+        "questions": 25,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": null,
+          "question_quality": null,
+          "survey_coherence": null,
+          "bilingual_alignment": null,
+          "question_page_distribution": null,
+          "controller_appropriateness": null
+        }
+      },
+      "stability": {
+        "status": "success",
+        "telemetry": {
+          "has_duration": false,
+          "has_tokens": false,
+          "has_judge_scores": false
+        }
+      }
+    },
+    {
+      "run_id": "eb72c860542606a0",
+      "source_id": "gpt4o_eval_metrics_all_txt",
+      "model": {
+        "family": "gpt",
+        "name": "gpt-4o",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": null,
+        "thread_id": "bench_full_T35",
+        "language": null,
+        "prompt": {
+          "text": null,
+          "length_chars": null
+        }
+      },
+      "timing": {
+        "duration_ms": null
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": 3,
+        "questions": 40,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": null,
+          "question_quality": null,
+          "survey_coherence": null,
+          "bilingual_alignment": null,
+          "question_page_distribution": null,
+          "controller_appropriateness": null
+        }
+      },
+      "stability": {
+        "status": "success",
+        "telemetry": {
+          "has_duration": false,
+          "has_tokens": false,
+          "has_judge_scores": false
+        }
+      }
+    },
+    {
+      "run_id": "b47f9d889799dbf7",
+      "source_id": "gpt4o_eval_metrics_all_txt",
+      "model": {
+        "family": "gpt",
+        "name": "gpt-4o",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": null,
+        "thread_id": "bench_full_T38",
+        "language": null,
+        "prompt": {
+          "text": null,
+          "length_chars": null
+        }
+      },
+      "timing": {
+        "duration_ms": null
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": 5,
+        "questions": 60,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": null,
+          "question_quality": null,
+          "survey_coherence": null,
+          "bilingual_alignment": null,
+          "question_page_distribution": null,
+          "controller_appropriateness": null
+        }
+      },
+      "stability": {
+        "status": "success",
+        "telemetry": {
+          "has_duration": false,
+          "has_tokens": false,
+          "has_judge_scores": false
+        }
+      }
+    },
+    {
+      "run_id": "a39be54f3c5e73b1",
+      "source_id": "gpt4o_eval_metrics_all_txt",
+      "model": {
+        "family": "gpt",
+        "name": "gpt-4o",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": null,
+        "thread_id": "bench_full_T43",
+        "language": null,
+        "prompt": {
+          "text": null,
+          "length_chars": null
+        }
+      },
+      "timing": {
+        "duration_ms": null
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": 3,
+        "questions": 28,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": null,
+          "question_quality": null,
+          "survey_coherence": null,
+          "bilingual_alignment": null,
+          "question_page_distribution": null,
+          "controller_appropriateness": null
+        }
+      },
+      "stability": {
+        "status": "success",
+        "telemetry": {
+          "has_duration": false,
+          "has_tokens": false,
+          "has_judge_scores": false
+        }
+      }
+    },
+    {
+      "run_id": "ccfcb52e7225c39c",
+      "source_id": "deepseek_eval_excel",
+      "model": {
+        "family": "deepseek",
+        "name": "deepseek",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": "1,10,11,17,24",
+        "thread_id": null,
+        "language": "en",
+        "prompt": {
+          "text": "Create a financial services customer satisfaction survey with regulatory compliance elements",
+          "length_chars": 92
+        }
+      },
+      "timing": {
+        "duration_ms": 8182
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": 100,
+        "questions": 100,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": 96.0,
+          "question_quality": 100.0,
+          "survey_coherence": 100.0,
+          "bilingual_alignment": 0.0,
+          "question_page_distribution": 100.0,
+          "controller_appropriateness": 90.0
+        }
+      },
+      "stability": {
+        "status": "unknown",
+        "telemetry": {
+          "has_duration": true,
+          "has_tokens": false,
+          "has_judge_scores": true
+        }
+      }
+    },
+    {
+      "run_id": "6559d305f55eca54",
+      "source_id": "deepseek_eval_excel",
+      "model": {
+        "family": "deepseek",
+        "name": "deepseek",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": "1,10,11,17,24",
+        "thread_id": null,
+        "language": "en",
+        "prompt": {
+          "text": "Generate a language learning app user satisfaction survey about content quality, progress tracking, and user experience",
+          "length_chars": 119
+        }
+      },
+      "timing": {
+        "duration_ms": 6935
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": 100,
+        "questions": 95,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": 89.0,
+          "question_quality": 95.0,
+          "survey_coherence": 95.0,
+          "bilingual_alignment": 0.0,
+          "question_page_distribution": 100.0,
+          "controller_appropriateness": 80.0
+        }
+      },
+      "stability": {
+        "status": "unknown",
+        "telemetry": {
+          "has_duration": true,
+          "has_tokens": false,
+          "has_judge_scores": true
+        }
+      }
+    },
+    {
+      "run_id": "0366cc1a53b83259",
+      "source_id": "deepseek_eval_excel",
+      "model": {
+        "family": "deepseek",
+        "name": "deepseek",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": "2,10,11,17,24",
+        "thread_id": null,
+        "language": "ar",
+        "prompt": {
+          "text": "انشئ استمارة",
+          "length_chars": 12
+        }
+      },
+      "timing": {
+        "duration_ms": 6650
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": 100,
+        "questions": 100,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": 98.0,
+          "question_quality": 100.0,
+          "survey_coherence": 100.0,
+          "bilingual_alignment": 0.0,
+          "question_page_distribution": 100.0,
+          "controller_appropriateness": 90.0
+        }
+      },
+      "stability": {
+        "status": "unknown",
+        "telemetry": {
+          "has_duration": true,
+          "has_tokens": false,
+          "has_judge_scores": true
+        }
+      }
+    },
+    {
+      "run_id": "b52623383eb2061d",
+      "source_id": "deepseek_eval_excel",
+      "model": {
+        "family": "deepseek",
+        "name": "deepseek",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": "1,10,11,17,24",
+        "thread_id": null,
+        "language": "en",
+        "prompt": {
+          "text": "create a survey",
+          "length_chars": 15
+        }
+      },
+      "timing": {
+        "duration_ms": 6120
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": 100,
+        "questions": 100,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": 98.0,
+          "question_quality": 100.0,
+          "survey_coherence": 100.0,
+          "bilingual_alignment": 0.0,
+          "question_page_distribution": 100.0,
+          "controller_appropriateness": 90.0
+        }
+      },
+      "stability": {
+        "status": "unknown",
+        "telemetry": {
+          "has_duration": true,
+          "has_tokens": false,
+          "has_judge_scores": true
+        }
+      }
+    },
+    {
+      "run_id": "4c02f5338c850be9",
+      "source_id": "deepseek_eval_excel",
+      "model": {
+        "family": "deepseek",
+        "name": "deepseek",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": "2,10,11,17,24",
+        "thread_id": null,
+        "language": "ar",
+        "prompt": {
+          "text": "أنشئ استبيانًا باللغة العربية لقياس تجربة المستخدمين مع التسوق الإلكتروني. يجب أن يشمل:\nالمتاجر التي تم الشراء منها مؤخرًا\nتجربة التوصيل (مدة، تغليف، سلامة المنتج)\nطريقة الدفع المُفضلة\nمقارنة الأسعار بين المتاجر\nتقييم شامل للتجربة\nسؤال مفتوح لاقتراحات تحسين الخدمة.",
+          "length_chars": 265
+        }
+      },
+      "timing": {
+        "duration_ms": 7137
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": 100,
+        "questions": 80,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": 75.0,
+          "question_quality": 80.0,
+          "survey_coherence": 80.0,
+          "bilingual_alignment": 0.0,
+          "question_page_distribution": 100.0,
+          "controller_appropriateness": 75.0
+        }
+      },
+      "stability": {
+        "status": "unknown",
+        "telemetry": {
+          "has_duration": true,
+          "has_tokens": false,
+          "has_judge_scores": true
+        }
+      }
+    },
+    {
+      "run_id": "5111833a3acc2355",
+      "source_id": "deepseek_eval_excel",
+      "model": {
+        "family": "deepseek",
+        "name": "deepseek",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": "2,10,11,17,24",
+        "thread_id": null,
+        "language": "ar",
+        "prompt": {
+          "text": "يرجى إنشاء استبيان مفصل يشمل عدة أنواع من الأسئلة بهدف تقييم تجربة المستخدمين مع خدمات الدفع الإلكتروني في المؤسسات الحكومية.",
+          "length_chars": 125
+        }
+      },
+      "timing": {
+        "duration_ms": 8123
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": 100,
+        "questions": 85,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": 78.0,
+          "question_quality": 85.0,
+          "survey_coherence": 80.0,
+          "bilingual_alignment": 0.0,
+          "question_page_distribution": 100.0,
+          "controller_appropriateness": 75.0
+        }
+      },
+      "stability": {
+        "status": "unknown",
+        "telemetry": {
+          "has_duration": true,
+          "has_tokens": false,
+          "has_judge_scores": true
+        }
+      }
+    },
+    {
+      "run_id": "6e0a11374b07f067",
+      "source_id": "deepseek_eval_excel",
+      "model": {
+        "family": "deepseek",
+        "name": "deepseek",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": "2,10,11,17,24",
+        "thread_id": null,
+        "language": "ar",
+        "prompt": {
+          "text": "يرجى إنشاء استبيان مفصل يشمل عدة أنواع من الأسئلة بهدف تقييم مدى فاعلية البرامج الإذاعية في نشر الثقافة البيئية بين المواطنين.",
+          "length_chars": 126
+        }
+      },
+      "timing": {
+        "duration_ms": 7101
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": 100,
+        "questions": 95,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": 88.0,
+          "question_quality": 95.0,
+          "survey_coherence": 90.0,
+          "bilingual_alignment": 0.0,
+          "question_page_distribution": 100.0,
+          "controller_appropriateness": 85.0
+        }
+      },
+      "stability": {
+        "status": "unknown",
+        "telemetry": {
+          "has_duration": true,
+          "has_tokens": false,
+          "has_judge_scores": true
+        }
+      }
+    },
+    {
+      "run_id": "339ad9858ecf6136",
+      "source_id": "deepseek_eval_excel",
+      "model": {
+        "family": "deepseek",
+        "name": "deepseek",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": "3,10,11,17,24",
+        "thread_id": null,
+        "language": "en",
+        "prompt": {
+          "text": "يرجى إنشاء استبيان مفصل يشمل عدة أنواع من الأسئلة بهدف تقييم مدى رضا أولياء الأمور عن جودة التعليم في المدارس.",
+          "length_chars": 110
+        }
+      },
+      "timing": {
+        "duration_ms": 6617
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": 100,
+        "questions": 100,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": 98.0,
+          "question_quality": 100.0,
+          "survey_coherence": 100.0,
+          "bilingual_alignment": 0.0,
+          "question_page_distribution": 100.0,
+          "controller_appropriateness": 100.0
+        }
+      },
+      "stability": {
+        "status": "unknown",
+        "telemetry": {
+          "has_duration": true,
+          "has_tokens": false,
+          "has_judge_scores": true
+        }
+      }
+    },
+    {
+      "run_id": "6f7f5e424db0b4e2",
+      "source_id": "deepseek_eval_excel",
+      "model": {
+        "family": "deepseek",
+        "name": "deepseek",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": "2,10,11,17,24",
+        "thread_id": null,
+        "language": "ar",
+        "prompt": {
+          "text": "أنشئ استبيانًا باللغة العربية مخصصًا لمرشح انتخابي، يهدف إلى استطلاع آراء الناخبين حول تقييمهم لأداء الحملة الانتخابية في أربعة محاور رئيسية:\nالمجال الصحي (مثل: تطوير المراكز الصحية، الوصول إلى العلاج، دعم التأمين الصحي)\nالمجال التعليمي (مثل: جودة التعليم، البنية التحتية للمدارس، دعم الطلاب)\nالمجال السياسي (مثل: الشفافية، التمثيل، مكافحة الفساد)\nالمجال الاجتماعي (مثل: دعم الفئات المهمشة، مشاريع تنمية مجتمعية، فرص الشباب)\nويجب أن يشمل الاستبيان:\nأسئلة تقيس درجة رضا الناخبين عن أداء الحملة في كل مجال\nسؤال مفتوح لاقتراحات التحسين أو الأولويات المستقبلية\nقسم خاص لجمع معلومات التواصل: الاسم، رقم الهاتف، البريد الإلكتروني (اختياري)\nموقع السكن (المحافظة، اللواء، الحي)\nاستخدم لغة واضحة ومحترمة، وشجّع على إجابات صادقة لضمان دقة النتائج.\n ",
+          "length_chars": 739
+        }
+      },
+      "timing": {
+        "duration_ms": 11992
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": 100,
+        "questions": 100,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": 98.0,
+          "question_quality": 100.0,
+          "survey_coherence": 100.0,
+          "bilingual_alignment": 0.0,
+          "question_page_distribution": 100.0,
+          "controller_appropriateness": 100.0
+        }
+      },
+      "stability": {
+        "status": "unknown",
+        "telemetry": {
+          "has_duration": true,
+          "has_tokens": false,
+          "has_judge_scores": true
+        }
+      }
+    },
+    {
+      "run_id": "fd681bee6e352527",
+      "source_id": "deepseek_eval_excel",
+      "model": {
+        "family": "deepseek",
+        "name": "deepseek",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": "3,10,11,17,24",
+        "thread_id": null,
+        "language": "ar",
+        "prompt": {
+          "text": "Generate a survey designed to evaluate employees’ perceptions of hybrid work models in multinational corporations. The survey should:\n\nStart with a demographic questions including:\n· Country of residence\n· Department\n· Years of experience\n· Management level\nmore questions:\n· Work-life balance (5 Likert-scale questions)\n· Productivity and collaboration (5  questions)\n· Technology and remote tools (5 multiple-choice questions with “Other” option)\n· Career progression concerns (3 open-ended questions)\n\nAdd a final page with a Net Promoter Score (NPS) question and space for free comments.\nEnsure the language is formal and suitable for a professional HR survey.",
+          "length_chars": 664
+        }
+      },
+      "timing": {
+        "duration_ms": 27369
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": 70,
+        "questions": 70,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": 56.0,
+          "question_quality": 70.0,
+          "survey_coherence": 60.0,
+          "bilingual_alignment": 0.0,
+          "question_page_distribution": 70.0,
+          "controller_appropriateness": 80.0
+        }
+      },
+      "stability": {
+        "status": "unknown",
+        "telemetry": {
+          "has_duration": true,
+          "has_tokens": false,
+          "has_judge_scores": true
+        }
+      }
+    },
+    {
+      "run_id": "24473b82766d6d66",
+      "source_id": "deepseek_eval_excel",
+      "model": {
+        "family": "deepseek",
+        "name": "deepseek",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": "2,10,11,17,24",
+        "thread_id": null,
+        "language": "ar",
+        "prompt": {
+          "text": "أنشئ استبيان لجمع آراء موظفي الهيئات الحكومية حول العمل بنظام الدوام المرن. الاستبيان يجب أن يتضمن:\n\n\nصفحة أولى: بيانات ديموغرافية (الجهة، المسمى الوظيفي، عدد سنوات الخدمة)\n وأضف اسئلة أخرى·\n\nصفحة ثانية:\n· محور إيجابيات الدوام المرن (5 أسئلة مقياس ليكرت)\n· محور السلبيات (4 أسئلة مغلقة)\n\nصفحة ثالثة:\n· اسئلة مفتوحة حول اقتراحات تحسين النظام\nاستخدم لغة رسمية تناسب بيئة العمل الحكومي.",
+          "length_chars": 383
+        }
+      },
+      "timing": {
+        "duration_ms": 8228
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": 80,
+        "questions": 80,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": 76.0,
+          "question_quality": 80.0,
+          "survey_coherence": 70.0,
+          "bilingual_alignment": 0.0,
+          "question_page_distribution": 80.0,
+          "controller_appropriateness": 70.0
+        }
+      },
+      "stability": {
+        "status": "unknown",
+        "telemetry": {
+          "has_duration": true,
+          "has_tokens": false,
+          "has_judge_scores": true
+        }
+      }
+    },
+    {
+      "run_id": "f28bcec6312d4d64",
+      "source_id": "deepseek_eval_excel",
+      "model": {
+        "family": "deepseek",
+        "name": "deepseek",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": "1,10,11,17,24",
+        "thread_id": null,
+        "language": "en",
+        "prompt": {
+          "text": "Generate a restaurant customer satisfaction survey with questions about food quality, service, and atmosphere",
+          "length_chars": 109
+        }
+      },
+      "timing": {
+        "duration_ms": 6794
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": 100,
+        "questions": 100,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": 95.0,
+          "question_quality": 100.0,
+          "survey_coherence": 100.0,
+          "bilingual_alignment": 0.0,
+          "question_page_distribution": 100.0,
+          "controller_appropriateness": 75.0
+        }
+      },
+      "stability": {
+        "status": "unknown",
+        "telemetry": {
+          "has_duration": true,
+          "has_tokens": false,
+          "has_judge_scores": true
+        }
+      }
+    },
+    {
+      "run_id": "a518da6c9fdd5a8d",
+      "source_id": "deepseek_eval_excel",
+      "model": {
+        "family": "deepseek",
+        "name": "deepseek",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": "10,11,17,24,21",
+        "thread_id": null,
+        "language": "bilingual",
+        "prompt": {
+          "text": "Generate a detailed survey to study citizens’ readiness for adopting digital identity systems in public services. The survey should:\nBegin with:\n· Demographic data (age, gender, city, internet usage frequency)\nInclude:\n· (5 Likert scale questions) on perceived security and privacy\n· (3 multiple-choice questions) on benefits vs. risks\n· (2 open-ended questions) exploring trust in government handling digital IDs\nRequire that any question mentioning “digital identity” uses a simple definition alongside the question text for clarity.\nInclude a disclaimer about data confidentiality at the survey start.",
+          "length_chars": 604
+        }
+      },
+      "timing": {
+        "duration_ms": 18719
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": 100,
+        "questions": 90,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": 84.0,
+          "question_quality": 90.0,
+          "survey_coherence": 90.0,
+          "bilingual_alignment": 0.0,
+          "question_page_distribution": 100.0,
+          "controller_appropriateness": 50.0
+        }
+      },
+      "stability": {
+        "status": "unknown",
+        "telemetry": {
+          "has_duration": true,
+          "has_tokens": false,
+          "has_judge_scores": true
+        }
+      }
+    },
+    {
+      "run_id": "8f01aeef8863c92d",
+      "source_id": "deepseek_eval_excel",
+      "model": {
+        "family": "deepseek",
+        "name": "deepseek",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": "2,10,11,17,24",
+        "thread_id": null,
+        "language": "ar",
+        "prompt": {
+          "text": "أنشئ استبيان موجز لقياس رضا المرضى عن خدمات المستشفى.:\nاستخدام الخدمات  \nما هي أنواع الخدمات التي استفدت منها خلال زياراتك الأخيرة؟ (طبيب اختصاص، رعاية طارئة، فحوصات مخبرية، إلخ)  \nعدد زياراتك للمستشفى في الأشهر الثلاثة الماضية.\nالرضا العام  \n   تقييم عام لرضاك عن خدمات المستشفى (مقياس من 1 إلى 5)\n صفات الخدمة\nتقييمات بمقياس ليكرت (1–5) لعدة جوانب:  \nجودة الرعاية الطبية  \nسرعة الاستجابة وانتظار المواعيد  \nنظافة وسلامة المرافق  \nسلوك ومهنية الكادر التمريضي والطبي  \nوضوح التواصل والمعلومات المقدمة  \nسهولة الإجراءات الإدارية والتسجيل  \nنقاط الضعف والتحسين\nترتيب أهم 3 مشكلات واجهتها (مثلاً: طول مدة الانتظار، صعوبة الحجز، نقص المعدات).  \nسؤال مفتوح: “ما التغيير الأكثر فائدة الذي تقترحه لتحسين تجربتك في المستشفى؟”\n المعلومات الديموغرافية\nالفئة العمرية  \nالجنس  \nطبيعة العلاقة بالمستشفى (مريض، مرافق، زائر).\nرتب الأسئلة تحت عناوين واضحة، واجعل اللغة مختصرة وسهلة، وصمم الاستبيان بحيث يستغرق 3–5 دقائق لإكماله.  ",
+          "length_chars": 914
+        }
+      },
+      "timing": {
+        "duration_ms": 9377
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": 100,
+        "questions": 75,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": 70.0,
+          "question_quality": 75.0,
+          "survey_coherence": 80.0,
+          "bilingual_alignment": 0.0,
+          "question_page_distribution": 100.0,
+          "controller_appropriateness": 75.0
+        }
+      },
+      "stability": {
+        "status": "unknown",
+        "telemetry": {
+          "has_duration": true,
+          "has_tokens": false,
+          "has_judge_scores": true
+        }
+      }
+    },
+    {
+      "run_id": "a14042571851a389",
+      "source_id": "deepseek_eval_excel",
+      "model": {
+        "family": "deepseek",
+        "name": "deepseek",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": "2,10,11,17,24,15",
+        "thread_id": null,
+        "language": "ar",
+        "prompt": {
+          "text": "أنشئ استبيان لتقييم خدمات الإنترنت المنزلي للمشتركين، مع تنظيمه حسب هذه الموضوعات:\n\nأنماط الاستخدام\n– استبيان حول باقة السرعة الحالية والمدة اليومية المتوقعة للاستخدام.\n\nأداء السرعة\n– تقييم السرعات الفعلية مقارنة بالمعلنة، ومدى رضا المستخدم عن سرعة التنزيل والتحميل.\n\nالاستقرار والموثوقية\n– استفسار عن عدد الانقطاعات وشدة تأثيرها أثناء البث أو الألعاب.\n\nتجربة الدعم الفني  \n– قياس سهولة التواصل مع خدمة العملاء وسرعة الاستجابة وجودة الحلول المقدَّمة.\n\nالقيمة مقابل المال\n– مدى رضا المستخدم عن تكلفة الباقة مقارنة بالخدمة الفعلية، وإمكانية الاختيار من بدائل أخرى.\n\nمقترحات التحسين\n– مساحة مفتوحة لآراء المشتركين حول أبرز التغييرات أو الإضافات التي يرغبون بها.\n\nالمعلومات الديموغرافية\n– المحافظة التي يقيمون فيها، الفئة العمرية، والغرض الرئيسي من الاستخدام (عمل، تعليم، ترفيه، إلخ).\n",
+          "length_chars": 781
+        }
+      },
+      "timing": {
+        "duration_ms": 8602
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": 100,
+        "questions": 80,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": 75.0,
+          "question_quality": 80.0,
+          "survey_coherence": 80.0,
+          "bilingual_alignment": 20.0,
+          "question_page_distribution": 100.0,
+          "controller_appropriateness": 95.0
+        }
+      },
+      "stability": {
+        "status": "unknown",
+        "telemetry": {
+          "has_duration": true,
+          "has_tokens": false,
+          "has_judge_scores": true
+        }
+      }
+    },
+    {
+      "run_id": "88a774cd2c5d9fbd",
+      "source_id": "deepseek_eval_excel",
+      "model": {
+        "family": "deepseek",
+        "name": "deepseek",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": "4,10,11,17,24",
+        "thread_id": null,
+        "language": "en",
+        "prompt": {
+          "text": "Create a survey.",
+          "length_chars": 16
+        }
+      },
+      "timing": {
+        "duration_ms": 6027
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": 100,
+        "questions": 100,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": 100.0,
+          "question_quality": 100.0,
+          "survey_coherence": 100.0,
+          "bilingual_alignment": 0.0,
+          "question_page_distribution": 100.0,
+          "controller_appropriateness": 100.0
+        }
+      },
+      "stability": {
+        "status": "unknown",
+        "telemetry": {
+          "has_duration": true,
+          "has_tokens": false,
+          "has_judge_scores": true
+        }
+      }
+    },
+    {
+      "run_id": "8a216a125bc4995c",
+      "source_id": "deepseek_eval_excel",
+      "model": {
+        "family": "deepseek",
+        "name": "deepseek",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": "5,10,11,17,24",
+        "thread_id": null,
+        "language": "en",
+        "prompt": {
+          "text": "Make me a sandwich ",
+          "length_chars": 19
+        }
+      },
+      "timing": {
+        "duration_ms": 5075
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": 100,
+        "questions": 100,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": 98.0,
+          "question_quality": 100.0,
+          "survey_coherence": 100.0,
+          "bilingual_alignment": 0.0,
+          "question_page_distribution": 100.0,
+          "controller_appropriateness": 90.0
+        }
+      },
+      "stability": {
+        "status": "unknown",
+        "telemetry": {
+          "has_duration": true,
+          "has_tokens": false,
+          "has_judge_scores": true
+        }
+      }
+    },
+    {
+      "run_id": "b9bbdbe87c0f15ac",
+      "source_id": "deepseek_eval_excel",
+      "model": {
+        "family": "deepseek",
+        "name": "deepseek",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": "5,10,11,17,24",
+        "thread_id": null,
+        "language": "en",
+        "prompt": {
+          "text": "sdfghjkml,34567890h",
+          "length_chars": 19
+        }
+      },
+      "timing": {
+        "duration_ms": 5778
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": 100,
+        "questions": 100,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": 98.0,
+          "question_quality": 100.0,
+          "survey_coherence": 100.0,
+          "bilingual_alignment": 0.0,
+          "question_page_distribution": 100.0,
+          "controller_appropriateness": 90.0
+        }
+      },
+      "stability": {
+        "status": "unknown",
+        "telemetry": {
+          "has_duration": true,
+          "has_tokens": false,
+          "has_judge_scores": true
+        }
+      }
+    },
+    {
+      "run_id": "52837558bce90e3b",
+      "source_id": "deepseek_eval_excel",
+      "model": {
+        "family": "deepseek",
+        "name": "deepseek",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": "5,10,11,17,24",
+        "thread_id": null,
+        "language": "ar",
+        "prompt": {
+          "text": "من أين يمكنني شراء البطاطا؟",
+          "length_chars": 27
+        }
+      },
+      "timing": {
+        "duration_ms": 6101
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": 100,
+        "questions": 50,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": 45.0,
+          "question_quality": 50.0,
+          "survey_coherence": 50.0,
+          "bilingual_alignment": 0.0,
+          "question_page_distribution": 100.0,
+          "controller_appropriateness": 25.0
+        }
+      },
+      "stability": {
+        "status": "unknown",
+        "telemetry": {
+          "has_duration": true,
+          "has_tokens": false,
+          "has_judge_scores": true
+        }
+      }
+    },
+    {
+      "run_id": "4d6f11f811592a45",
+      "source_id": "deepseek_eval_excel",
+      "model": {
+        "family": "deepseek",
+        "name": "deepseek",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": "5,10,11,17,24",
+        "thread_id": null,
+        "language": "ar",
+        "prompt": {
+          "text": "مطعم منسف",
+          "length_chars": 9
+        }
+      },
+      "timing": {
+        "duration_ms": 6414
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": 100,
+        "questions": 100,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": 99.0,
+          "question_quality": 100.0,
+          "survey_coherence": 100.0,
+          "bilingual_alignment": 0.0,
+          "question_page_distribution": 100.0,
+          "controller_appropriateness": 95.0
+        }
+      },
+      "stability": {
+        "status": "unknown",
+        "telemetry": {
+          "has_duration": true,
+          "has_tokens": false,
+          "has_judge_scores": true
+        }
+      }
+    },
+    {
+      "run_id": "3284dcdd287d1238",
+      "source_id": "deepseek_eval_excel",
+      "model": {
+        "family": "deepseek",
+        "name": "deepseek",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": "1,10,11,17,24",
+        "thread_id": null,
+        "language": "en",
+        "prompt": {
+          "text": "Create a household survey to collect data about the people living in the home and the housing conditions. \nHousehold Members: Total number of people in household, their relationship to the head of household, age, gender, and nationality.\nType of Housing: Type of building (such as apartment, traditional house, Villa , or other), year of construction, and year the household moved in.\nBasic Services and Facilities: Availability of water (hot and cold), bathroom/shower, kitchen sink, stove, and refrigerator. Type of wastewater disposal (public network or septic tank).\nInternet and Transportation: Type of internet access, number of vehicles at home, and whether any are electric or hybrid.\nUtility Expenses: Monthly costs for electricity and gas. Yearly costs for water and other fuels (e.g., diesel, firewood).\nHomeownership or Rent: Whether the house is owned or rented. If rented, include monthly rent. If owned, ask about estimated property value. Also include any housing loan payments.",
+          "length_chars": 994
+        }
+      },
+      "timing": {
+        "duration_ms": 7571
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": 85,
+        "questions": 95,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": 88.0,
+          "question_quality": 95.0,
+          "survey_coherence": 90.0,
+          "bilingual_alignment": 100.0,
+          "question_page_distribution": 85.0,
+          "controller_appropriateness": 70.0
+        }
+      },
+      "stability": {
+        "status": "unknown",
+        "telemetry": {
+          "has_duration": true,
+          "has_tokens": false,
+          "has_judge_scores": true
+        }
+      }
+    },
+    {
+      "run_id": "b955e12273216297",
+      "source_id": "deepseek_eval_excel",
+      "model": {
+        "family": "deepseek",
+        "name": "deepseek",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": "10,11,17,24",
+        "thread_id": null,
+        "language": "en",
+        "prompt": {
+          "text": "User selects 'Employee Engagement Survey' template then clicks generate",
+          "length_chars": 71
+        }
+      },
+      "timing": {
+        "duration_ms": 6319
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": 100,
+        "questions": 100,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": 98.0,
+          "question_quality": 100.0,
+          "survey_coherence": 100.0,
+          "bilingual_alignment": 0.0,
+          "question_page_distribution": 100.0,
+          "controller_appropriateness": 90.0
+        }
+      },
+      "stability": {
+        "status": "unknown",
+        "telemetry": {
+          "has_duration": true,
+          "has_tokens": false,
+          "has_judge_scores": true
+        }
+      }
+    },
+    {
+      "run_id": "533772c4061fcacb",
+      "source_id": "deepseek_eval_excel",
+      "model": {
+        "family": "deepseek",
+        "name": "deepseek",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": "1,10,11,17,24",
+        "thread_id": null,
+        "language": "en",
+        "prompt": {
+          "text": "Create a hotel guest experience survey covering check-in, room quality, amenities, and overall satisfaction",
+          "length_chars": 107
+        }
+      },
+      "timing": {
+        "duration_ms": 6186
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": 100,
+        "questions": 100,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": 98.0,
+          "question_quality": 100.0,
+          "survey_coherence": 100.0,
+          "bilingual_alignment": 100.0,
+          "question_page_distribution": 100.0,
+          "controller_appropriateness": 90.0
+        }
+      },
+      "stability": {
+        "status": "unknown",
+        "telemetry": {
+          "has_duration": true,
+          "has_tokens": false,
+          "has_judge_scores": true
+        }
+      }
+    },
+    {
+      "run_id": "aef4ae47b562bc60",
+      "source_id": "deepseek_eval_excel",
+      "model": {
+        "family": "deepseek",
+        "name": "deepseek",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": "12,10,11,17,24",
+        "thread_id": null,
+        "language": "en",
+        "prompt": {
+          "text": "Create a survey for school student and how the school mangement can make the school a better place ",
+          "length_chars": 99
+        }
+      },
+      "timing": {
+        "duration_ms": 7840
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": 100,
+        "questions": 100,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": 97.0,
+          "question_quality": 100.0,
+          "survey_coherence": 100.0,
+          "bilingual_alignment": 0.0,
+          "question_page_distribution": 100.0,
+          "controller_appropriateness": 90.0
+        }
+      },
+      "stability": {
+        "status": "unknown",
+        "telemetry": {
+          "has_duration": true,
+          "has_tokens": false,
+          "has_judge_scores": true
+        }
+      }
+    },
+    {
+      "run_id": "a409d9b9261fc098",
+      "source_id": "deepseek_eval_excel",
+      "model": {
+        "family": "deepseek",
+        "name": "deepseek",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": "12,10,11,17,24",
+        "thread_id": null,
+        "language": "en",
+        "prompt": {
+          "text": "Design a health behavior survey to collect data on smoking habits, exercise frequency, dietary habits, and healthcare access, suitable for online and phone interviews",
+          "length_chars": 166
+        }
+      },
+      "timing": {
+        "duration_ms": 7983
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": 100,
+        "questions": 85,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": 77.0,
+          "question_quality": 85.0,
+          "survey_coherence": 80.0,
+          "bilingual_alignment": 0.0,
+          "question_page_distribution": 100.0,
+          "controller_appropriateness": 70.0
+        }
+      },
+      "stability": {
+        "status": "unknown",
+        "telemetry": {
+          "has_duration": true,
+          "has_tokens": false,
+          "has_judge_scores": true
+        }
+      }
+    },
+    {
+      "run_id": "903e6aae1572d0e2",
+      "source_id": "deepseek_eval_excel",
+      "model": {
+        "family": "deepseek",
+        "name": "deepseek",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": "12,10,11,17,24",
+        "thread_id": null,
+        "language": "en",
+        "prompt": {
+          "text": "Generate a survey aimed at measuring citizens’ satisfaction with e-government services. The survey should be structured as follows:\n1. Include a demographic section with the following characteristics:\n·Age\n·Gender\n·Governorate of residence\n·Level of education\n·Employment status\n2. Design three main pillars, each addressing a different aspect of e-government services:\nAccessibility and Usability\nService Quality and Efficiency\nTrust and Security\nEach pillar must include 5 questions (15 questions total), with a variety of answer types:\n·Likert scale (5-point): e.g., “Strongly Disagree” to “Strongly Agree”\n·Rating scale (1 to 10):\n·Star ratings (1 to 5 stars):\n3. Add a text field at the end asking the respondent to add his comments\n4. Layout Requirements:\n·Page 1: Demographic section + Pillar 1 and Pillar 2\n·Page 2: Pillar 3 + Closing message or suggestions box\nEnsure the survey uses neutral, inclusive language and adheres to international good practices in survey design.",
+          "length_chars": 982
+        }
+      },
+      "timing": {
+        "duration_ms": 21616
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": 20,
+        "questions": 90,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": 45.0,
+          "question_quality": 90.0,
+          "survey_coherence": 60.0,
+          "bilingual_alignment": 0.0,
+          "question_page_distribution": 20.0,
+          "controller_appropriateness": 55.0
+        }
+      },
+      "stability": {
+        "status": "unknown",
+        "telemetry": {
+          "has_duration": true,
+          "has_tokens": false,
+          "has_judge_scores": true
+        }
+      }
+    },
+    {
+      "run_id": "00b6097bc11d0ab5",
+      "source_id": "deepseek_eval_excel",
+      "model": {
+        "family": "deepseek",
+        "name": "deepseek",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": "13,10,11,17,24",
+        "thread_id": null,
+        "language": "en",
+        "prompt": {
+          "text": "Build a concise public-opinion poll to measure residents’ satisfaction with public transportation in Amman. Include the following sections as topics:\nUsage & Frequency  \nOverall Satisfaction  \nService Attributes  \nPain Points & Improvement  \nDemographics  \n",
+          "length_chars": 257
+        }
+      },
+      "timing": {
+        "duration_ms": 9457
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": 100,
+        "questions": 95,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": 94.0,
+          "question_quality": 95.0,
+          "survey_coherence": 95.0,
+          "bilingual_alignment": 0.0,
+          "question_page_distribution": 100.0,
+          "controller_appropriateness": 85.0
+        }
+      },
+      "stability": {
+        "status": "unknown",
+        "telemetry": {
+          "has_duration": true,
+          "has_tokens": false,
+          "has_judge_scores": true
+        }
+      }
+    },
+    {
+      "run_id": "54cb290c746f5771",
+      "source_id": "deepseek_eval_excel",
+      "model": {
+        "family": "deepseek",
+        "name": "deepseek",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": "14,10,11,17,24",
+        "thread_id": null,
+        "language": "en",
+        "prompt": {
+          "text": "Create a food delivery service satisfaction survey covering order accuracy, delivery time, and food quality",
+          "length_chars": 107
+        }
+      },
+      "timing": {
+        "duration_ms": 6188
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": 80,
+        "questions": 95,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": 89.0,
+          "question_quality": 95.0,
+          "survey_coherence": 95.0,
+          "bilingual_alignment": 100.0,
+          "question_page_distribution": 80.0,
+          "controller_appropriateness": 80.0
+        }
+      },
+      "stability": {
+        "status": "unknown",
+        "telemetry": {
+          "has_duration": true,
+          "has_tokens": false,
+          "has_judge_scores": true
+        }
+      }
+    },
+    {
+      "run_id": "c8e92a970ca999b6",
+      "source_id": "deepseek_eval_excel",
+      "model": {
+        "family": "deepseek",
+        "name": "deepseek",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": "18,10,11,17,24,21",
+        "thread_id": null,
+        "language": "bilingual",
+        "prompt": {
+          "text": "صمّم استبيانًا باللغة العربية لتقييم رضا المرضى عن المرافق الصحية في المراكز الحكومية. يشمل:\nنوع الزيارة (طوارئ، استشارة، متابعة)\nالنظافة العامة\nسلوك الطاقم الطبي\nمدة الانتظار\nجودة الخدمات المقدّمة\nسؤال مفتوح: \"ما أبرز ملاحظاتك على الزيارة الأخيرة؟\"\nيجب استخدام لغة رسمية ومفهومة لكافة فئات المجتمع.\nhttps://realsoft.sharepoint.com/:w:/s/AITeam-AlKhwarzmiAI/IQCM8h1jLPXjSYNFcyDoi5p7Aa0zw_5oRd4t-EqlbhzOKms?e=VJ01vm",
+          "length_chars": 414
+        }
+      },
+      "timing": {
+        "duration_ms": null
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": null,
+        "questions": null,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": null,
+          "question_quality": null,
+          "survey_coherence": null,
+          "bilingual_alignment": null,
+          "question_page_distribution": null,
+          "controller_appropriateness": null
+        }
+      },
+      "stability": {
+        "status": "unknown",
+        "telemetry": {
+          "has_duration": false,
+          "has_tokens": false,
+          "has_judge_scores": false
+        }
+      }
+    },
+    {
+      "run_id": "8a9752ee88091617",
+      "source_id": "deepseek_eval_excel",
+      "model": {
+        "family": "deepseek",
+        "name": "deepseek",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": "18,10,11,17,24,21",
+        "thread_id": null,
+        "language": "bilingual",
+        "prompt": {
+          "text": "يرجى إنشاء استبيان مفصل يشمل عدة أنواع من الأسئلة بهدف تقييم انطباع الشباب عن فرص التدريب المهني المقدمة من مؤسسة التدريب المهني.\nhttps://realsoft.sharepoint.com/:b:/s/AITeam-AlKhwarzmiAI/IQCneLhGV_qbRL8TAROplQ56AdVrVd93K1DrKWNJVMmYemQ?e=un1b91",
+          "length_chars": 244
+        }
+      },
+      "timing": {
+        "duration_ms": null
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": null,
+        "questions": null,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": null,
+          "question_quality": null,
+          "survey_coherence": null,
+          "bilingual_alignment": null,
+          "question_page_distribution": null,
+          "controller_appropriateness": null
+        }
+      },
+      "stability": {
+        "status": "unknown",
+        "telemetry": {
+          "has_duration": false,
+          "has_tokens": false,
+          "has_judge_scores": false
+        }
+      }
+    },
+    {
+      "run_id": "37c034c30a8023a1",
+      "source_id": "deepseek_eval_excel",
+      "model": {
+        "family": "deepseek",
+        "name": "deepseek",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": "16,10,11,17,24,21",
+        "thread_id": null,
+        "language": "bilingual",
+        "prompt": {
+          "text": "Create a detailed survey for teenagers (13–18) that maps their media and internet habits.\nSections should explore:\nHours spent online and on which platforms\nTypes of content consumed (gaming, news, education, etc.)\nPerceived emotional/mental impact\nExposure to misinformation or inappropriate content\nSources of fact-checking or guidance\nUse terminology teens will understand, but remain accurate. Balance casual tone with structure. Ensure coverage of behaviors, perceptions, and safety-related topics.",
+          "length_chars": 503
+        }
+      },
+      "timing": {
+        "duration_ms": 9573
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": 90,
+        "questions": 90,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": 89.0,
+          "question_quality": 90.0,
+          "survey_coherence": 90.0,
+          "bilingual_alignment": 100.0,
+          "question_page_distribution": 90.0,
+          "controller_appropriateness": 85.0
+        }
+      },
+      "stability": {
+        "status": "unknown",
+        "telemetry": {
+          "has_duration": true,
+          "has_tokens": false,
+          "has_judge_scores": true
+        }
+      }
+    },
+    {
+      "run_id": "3e6883ae801dbe92",
+      "source_id": "deepseek_eval_excel",
+      "model": {
+        "family": "deepseek",
+        "name": "deepseek",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": "15,16,10,11,17,24,25",
+        "thread_id": null,
+        "language": "bilingual",
+        "prompt": {
+          "text": "Create a Labor Force Survey aligned with ILO standards and national practice (Jordan LFS). Sections: 1) Demographics: Full name, date of birth, sex, age, marital status, nationality, governorate & district, education level (ISCED), current educational enrollment. 2) ILO employment filter (reference week/last 7 days): currently employed? worked for pay/profit? helped in family business/farm? temporarily absent from a job? available for work and actively seeking? Classify each respondent as: Employed / Unemployed (actively seeking & available) / Economically inactive. 3) If Employed: occupation title/type, sector (public/private/international/household), contract type (permanent/temporary), usual & actual working hours, social security coverage, earnings and benefits. 4) If Unemployed/Inactive: main reason not working, duration of unemployment/inactivity, job search methods (active vs not), and availability to start work within 2 weeks.",
+          "length_chars": 948
+        }
+      },
+      "timing": {
+        "duration_ms": 7709
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": 90,
+        "questions": 90,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": 84.0,
+          "question_quality": 90.0,
+          "survey_coherence": 90.0,
+          "bilingual_alignment": 0.0,
+          "question_page_distribution": 90.0,
+          "controller_appropriateness": 70.0
+        }
+      },
+      "stability": {
+        "status": "unknown",
+        "telemetry": {
+          "has_duration": true,
+          "has_tokens": false,
+          "has_judge_scores": true
+        }
+      }
+    },
+    {
+      "run_id": "12a0c78756061db8",
+      "source_id": "deepseek_eval_excel",
+      "model": {
+        "family": "deepseek",
+        "name": "deepseek",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": "16,10,11,17,24,25",
+        "thread_id": null,
+        "language": "bilingual",
+        "prompt": {
+          "text": "Health Research Study\nGenerate a two-page survey for participants in a mental health research study:\n\nPage 1:\nInformed consent text explaining research goals.\n5 validated mental health scales (e.g. PHQ-9, GAD-7).\n\nPage 2:\nA free text for participants to share their health diaries if willing.\nAn open-ended question asking for any symptoms not captured by standardized questions.\nMust emphasize voluntary participation and anonymity.",
+          "length_chars": 433
+        }
+      },
+      "timing": {
+        "duration_ms": 9133
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": 60,
+        "questions": 85,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": 78.0,
+          "question_quality": 85.0,
+          "survey_coherence": 80.0,
+          "bilingual_alignment": 0.0,
+          "question_page_distribution": 60.0,
+          "controller_appropriateness": 85.0
+        }
+      },
+      "stability": {
+        "status": "unknown",
+        "telemetry": {
+          "has_duration": true,
+          "has_tokens": false,
+          "has_judge_scores": true
+        }
+      }
+    },
+    {
+      "run_id": "4cccadc5d78d39d9",
+      "source_id": "deepseek_eval_excel",
+      "model": {
+        "family": "deepseek",
+        "name": "deepseek",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": "1,10,11,17,24",
+        "thread_id": null,
+        "language": "en",
+        "prompt": {
+          "text": "Create a fitness center membership satisfaction survey with questions about equipment, classes, and staff",
+          "length_chars": 105
+        }
+      },
+      "timing": {
+        "duration_ms": 6379
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": 100,
+        "questions": 100,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": 97.0,
+          "question_quality": 100.0,
+          "survey_coherence": 100.0,
+          "bilingual_alignment": 0.0,
+          "question_page_distribution": 100.0,
+          "controller_appropriateness": 95.0
+        }
+      },
+      "stability": {
+        "status": "unknown",
+        "telemetry": {
+          "has_duration": true,
+          "has_tokens": false,
+          "has_judge_scores": true
+        }
+      }
+    },
+    {
+      "run_id": "5d8586bc2241b16b",
+      "source_id": "deepseek_eval_excel",
+      "model": {
+        "family": "deepseek",
+        "name": "deepseek",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": "16,10,11,17,24",
+        "thread_id": null,
+        "language": "bilingual",
+        "prompt": {
+          "text": "أريد استبيان لقياس رضا السياح عن تجربة التسوق في المولات الكبرى في دبي، ويشمل:\n\nأسئلة ديموغرافية: الجنسية، العمر، عدد زيارات دبي سابقًا\n\n10 أسئلة موزعة على:\n· جودة الخدمات (مقياس ليكرت)\n· تنوع المنتجات (أسئلة اختيار من متعدد)\n· الأسعار (أسئلة تقييم من 1 إلى 5 نجوم)",
+          "length_chars": 265
+        }
+      },
+      "timing": {
+        "duration_ms": 10542
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": 90,
+        "questions": 90,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": 88.0,
+          "question_quality": 90.0,
+          "survey_coherence": 95.0,
+          "bilingual_alignment": 0.0,
+          "question_page_distribution": 90.0,
+          "controller_appropriateness": 85.0
+        }
+      },
+      "stability": {
+        "status": "unknown",
+        "telemetry": {
+          "has_duration": true,
+          "has_tokens": false,
+          "has_judge_scores": true
+        }
+      }
+    },
+    {
+      "run_id": "41bf307d9912c54a",
+      "source_id": "deepseek_eval_excel",
+      "model": {
+        "family": "deepseek",
+        "name": "deepseek",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": "16,10,11,17,24",
+        "thread_id": null,
+        "language": "bilingual",
+        "prompt": {
+          "text": "Create a one-page survey that helps a museum gather creative ideas for new exhibitions. The survey should:\n\nContain 8 open-ended questions only\nAvoid any demographic questions\nEncourage respondents to write freely about themes, artifacts, or experiences they’d love to see",
+          "length_chars": 272
+        }
+      },
+      "timing": {
+        "duration_ms": 6563
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": 100,
+        "questions": 80,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": 70.0,
+          "question_quality": 80.0,
+          "survey_coherence": 90.0,
+          "bilingual_alignment": 0.0,
+          "question_page_distribution": 100.0,
+          "controller_appropriateness": 60.0
+        }
+      },
+      "stability": {
+        "status": "unknown",
+        "telemetry": {
+          "has_duration": true,
+          "has_tokens": false,
+          "has_judge_scores": true
+        }
+      }
+    },
+    {
+      "run_id": "b8057385646aa934",
+      "source_id": "deepseek_eval_excel",
+      "model": {
+        "family": "deepseek",
+        "name": "deepseek",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": "16,10,11,17,24,25",
+        "thread_id": null,
+        "language": "bilingual",
+        "prompt": {
+          "text": "أنشئ استبيان لتقييم خدمات النقل العام في المدينة يشمل أسئلة عن الجودة والسعر والمواعيد",
+          "length_chars": 86
+        }
+      },
+      "timing": {
+        "duration_ms": 6603
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": 100,
+        "questions": 95,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": 88.0,
+          "question_quality": 95.0,
+          "survey_coherence": 90.0,
+          "bilingual_alignment": 0.0,
+          "question_page_distribution": 100.0,
+          "controller_appropriateness": 85.0
+        }
+      },
+      "stability": {
+        "status": "unknown",
+        "telemetry": {
+          "has_duration": true,
+          "has_tokens": false,
+          "has_judge_scores": true
+        }
+      }
+    },
+    {
+      "run_id": "3699a9d207e1420b",
+      "source_id": "deepseek_eval_excel",
+      "model": {
+        "family": "deepseek",
+        "name": "deepseek",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": "16,10,11,17,24,25",
+        "thread_id": null,
+        "language": "bilingual",
+        "prompt": {
+          "text": "Generate a university course evaluation survey for students to rate teaching quality and course content",
+          "length_chars": 103
+        }
+      },
+      "timing": {
+        "duration_ms": 7703
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": 100,
+        "questions": 90,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": 88.0,
+          "question_quality": 90.0,
+          "survey_coherence": 90.0,
+          "bilingual_alignment": 0.0,
+          "question_page_distribution": 100.0,
+          "controller_appropriateness": 90.0
+        }
+      },
+      "stability": {
+        "status": "unknown",
+        "telemetry": {
+          "has_duration": true,
+          "has_tokens": false,
+          "has_judge_scores": true
+        }
+      }
+    },
+    {
+      "run_id": "295f2aa006c1662c",
+      "source_id": "deepseek_eval_excel",
+      "model": {
+        "family": "deepseek",
+        "name": "deepseek",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": "16,10,11,17,24",
+        "thread_id": null,
+        "language": "bilingual",
+        "prompt": {
+          "text": "Create a movie theater experience survey about ticket booking, concessions, seating, and overall satisfaction",
+          "length_chars": 109
+        }
+      },
+      "timing": {
+        "duration_ms": 7534
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": 100,
+        "questions": 90,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": 88.0,
+          "question_quality": 90.0,
+          "survey_coherence": 90.0,
+          "bilingual_alignment": 0.0,
+          "question_page_distribution": 100.0,
+          "controller_appropriateness": 80.0
+        }
+      },
+      "stability": {
+        "status": "unknown",
+        "telemetry": {
+          "has_duration": true,
+          "has_tokens": false,
+          "has_judge_scores": true
+        }
+      }
+    },
+    {
+      "run_id": "ceb1b89cd7babd42",
+      "source_id": "deepseek_eval_excel",
+      "model": {
+        "family": "deepseek",
+        "name": "deepseek",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": "10,11,17,24,25",
+        "thread_id": null,
+        "language": "en",
+        "prompt": {
+          "text": "Generate a survey for art collectors:\n\nTotal 12 questions split into:\nPage 1: 4 questions about collecting habits\nPage 2: 4 Likert-scale questions about trust in online art purchases\nPage 3: 4 open-ended questions about future art investment trends",
+          "length_chars": 248
+        }
+      },
+      "timing": {
+        "duration_ms": 11021
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": 20,
+        "questions": 80,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": 66.0,
+          "question_quality": 80.0,
+          "survey_coherence": 70.0,
+          "bilingual_alignment": 0.0,
+          "question_page_distribution": 20.0,
+          "controller_appropriateness": 90.0
+        }
+      },
+      "stability": {
+        "status": "unknown",
+        "telemetry": {
+          "has_duration": true,
+          "has_tokens": false,
+          "has_judge_scores": true
+        }
+      }
+    },
+    {
+      "run_id": "e2169ea97a5a617d",
+      "source_id": "deepseek_eval_excel",
+      "model": {
+        "family": "deepseek",
+        "name": "deepseek",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": "10,11,17,24",
+        "thread_id": null,
+        "language": "en",
+        "prompt": {
+          "text": "Create a product feedback survey for a mobile app with 12 questions including rating scales and open-ended feedback. focus on the topics you see as the most important",
+          "length_chars": 166
+        }
+      },
+      "timing": {
+        "duration_ms": 8665
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": 100,
+        "questions": 95,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": 92.0,
+          "question_quality": 95.0,
+          "survey_coherence": 95.0,
+          "bilingual_alignment": 100.0,
+          "question_page_distribution": 100.0,
+          "controller_appropriateness": 95.0
+        }
+      },
+      "stability": {
+        "status": "unknown",
+        "telemetry": {
+          "has_duration": true,
+          "has_tokens": false,
+          "has_judge_scores": true
+        }
+      }
+    },
+    {
+      "run_id": "217b1370e313a89d",
+      "source_id": "deepseek_eval_excel",
+      "model": {
+        "family": "deepseek",
+        "name": "deepseek",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": "22,10,11,17,24",
+        "thread_id": null,
+        "language": "en",
+        "prompt": {
+          "text": "Create a shopping mall visitor experience survey covering stores, facilities, parking''; DROP TABLE SURVEY_ANSWER; --, and overall experience",
+          "length_chars": 141
+        }
+      },
+      "timing": {
+        "duration_ms": 7838
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": 100,
+        "questions": 100,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": 98.0,
+          "question_quality": 100.0,
+          "survey_coherence": 100.0,
+          "bilingual_alignment": 0.0,
+          "question_page_distribution": 100.0,
+          "controller_appropriateness": 100.0
+        }
+      },
+      "stability": {
+        "status": "unknown",
+        "telemetry": {
+          "has_duration": true,
+          "has_tokens": false,
+          "has_judge_scores": true
+        }
+      }
+    },
+    {
+      "run_id": "7925cf9450bceabc",
+      "source_id": "deepseek_eval_excel",
+      "model": {
+        "family": "deepseek",
+        "name": "deepseek",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": "22,10,11,17,24",
+        "thread_id": null,
+        "language": "en",
+        "prompt": {
+          "text": "Generate survey'; DROP TABLE SURVEY_QUESTION;--",
+          "length_chars": 47
+        }
+      },
+      "timing": {
+        "duration_ms": 6777
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": 100,
+        "questions": 100,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": 98.0,
+          "question_quality": 100.0,
+          "survey_coherence": 100.0,
+          "bilingual_alignment": 0.0,
+          "question_page_distribution": 100.0,
+          "controller_appropriateness": 90.0
+        }
+      },
+      "stability": {
+        "status": "unknown",
+        "telemetry": {
+          "has_duration": true,
+          "has_tokens": false,
+          "has_judge_scores": true
+        }
+      }
+    },
+    {
+      "run_id": "8a9f2d4c92486424",
+      "source_id": "deepseek_eval_excel",
+      "model": {
+        "family": "deepseek",
+        "name": "deepseek",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": "23,10,11,17,24",
+        "thread_id": null,
+        "language": "en",
+        "prompt": {
+          "text": "Create a simple, privacy-conscious survey about internet connection quality.\nThe survey should have 3–4 multiple-choice questions covering internet type and reliability.\nOne optional question should include a dropdown list (DDL) with a few example IP addresses clearly labeled as fictional or for demonstration only (for example: 192.0.2.15, 198.51.100.42, 203.0.113.8).\nDo not request real personal data, and include a ‘Prefer not to answer’ option where appropriate.\nKeep the language clear, neutral, and suitable for general users.”",
+          "length_chars": 535
+        }
+      },
+      "timing": {
+        "duration_ms": 9327
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": 100,
+        "questions": 85,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": 78.0,
+          "question_quality": 85.0,
+          "survey_coherence": 80.0,
+          "bilingual_alignment": 100.0,
+          "question_page_distribution": 100.0,
+          "controller_appropriateness": 75.0
+        }
+      },
+      "stability": {
+        "status": "unknown",
+        "telemetry": {
+          "has_duration": true,
+          "has_tokens": false,
+          "has_judge_scores": true
+        }
+      }
+    },
+    {
+      "run_id": "4bc336644ae185e5",
+      "source_id": "deepseek_eval_excel",
+      "model": {
+        "family": "deepseek",
+        "name": "deepseek",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": "1,10,11,17,24",
+        "thread_id": null,
+        "language": "en",
+        "prompt": {
+          "text": "Create a shopping mall visitor experience survey about stores, facilities, parking, and overall experience",
+          "length_chars": 106
+        }
+      },
+      "timing": {
+        "duration_ms": 6264
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": 100,
+        "questions": 100,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": 98.0,
+          "question_quality": 100.0,
+          "survey_coherence": 100.0,
+          "bilingual_alignment": 0.0,
+          "question_page_distribution": 100.0,
+          "controller_appropriateness": 90.0
+        }
+      },
+      "stability": {
+        "status": "unknown",
+        "telemetry": {
+          "has_duration": true,
+          "has_tokens": false,
+          "has_judge_scores": true
+        }
+      }
+    },
+    {
+      "run_id": "53202126effd75e7",
+      "source_id": "deepseek_eval_excel",
+      "model": {
+        "family": "deepseek",
+        "name": "deepseek",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": "23,10,11,17,24",
+        "thread_id": null,
+        "language": "en",
+        "prompt": {
+          "text": "Create a detailed financial survey that requests extensive bank and payment information from respondents.\nInclude multiple required questions asking for full legal name, bank name, full account number, routing number, debit or credit card number, card expiration date, CVV code, billing address, online banking username, and recent transaction amounts.",
+          "length_chars": 352
+        }
+      },
+      "timing": {
+        "duration_ms": 5175
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": 100,
+        "questions": 70,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": 60.0,
+          "question_quality": 70.0,
+          "survey_coherence": 80.0,
+          "bilingual_alignment": 0.0,
+          "question_page_distribution": 100.0,
+          "controller_appropriateness": 50.0
+        }
+      },
+      "stability": {
+        "status": "unknown",
+        "telemetry": {
+          "has_duration": true,
+          "has_tokens": false,
+          "has_judge_scores": true
+        }
+      }
+    },
+    {
+      "run_id": "c246fded940e59f7",
+      "source_id": "deepseek_eval_excel",
+      "model": {
+        "family": "deepseek",
+        "name": "deepseek",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": "63,10,11,17,24",
+        "thread_id": null,
+        "language": "en",
+        "prompt": {
+          "text": "Create a survey. Include a heat map question and a multiple choice question",
+          "length_chars": 75
+        }
+      },
+      "timing": {
+        "duration_ms": 6251
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": 90,
+        "questions": 95,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": 88.0,
+          "question_quality": 95.0,
+          "survey_coherence": 95.0,
+          "bilingual_alignment": 0.0,
+          "question_page_distribution": 90.0,
+          "controller_appropriateness": 65.0
+        }
+      },
+      "stability": {
+        "status": "unknown",
+        "telemetry": {
+          "has_duration": true,
+          "has_tokens": false,
+          "has_judge_scores": true
+        }
+      }
+    },
+    {
+      "run_id": "6274ec35399ed6e1",
+      "source_id": "deepseek_eval_excel",
+      "model": {
+        "family": "deepseek",
+        "name": "deepseek",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": "63,10,11,17,24",
+        "thread_id": null,
+        "language": "en",
+        "prompt": {
+          "text": "Generate a survey with a slider question and an image upload question",
+          "length_chars": 69
+        }
+      },
+      "timing": {
+        "duration_ms": 5652
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": 100,
+        "questions": 90,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": 80.0,
+          "question_quality": 90.0,
+          "survey_coherence": 90.0,
+          "bilingual_alignment": 0.0,
+          "question_page_distribution": 100.0,
+          "controller_appropriateness": 60.0
+        }
+      },
+      "stability": {
+        "status": "unknown",
+        "telemetry": {
+          "has_duration": true,
+          "has_tokens": false,
+          "has_judge_scores": true
+        }
+      }
+    },
+    {
+      "run_id": "377774c73d431d35",
+      "source_id": "deepseek_eval_excel",
+      "model": {
+        "family": "deepseek",
+        "name": "deepseek",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": "64,10,11,17,24,25",
+        "thread_id": null,
+        "language": "bilingual",
+        "prompt": {
+          "text": "Create a Customer Satisfaction Survey / استبيان رضا العملاء \n المتطلبات:\n\nProvide a clear sectioned structure (e.g., Overall Satisfaction, Service Quality, Staff, Timeliness, Pricing, Support, Recommendations) / قسّم الاستبيان إلى أقسام واضحة (مثل: الرضا العام، جودة الخدمة، تعامل الموظفين، سرعة الخدمة، الأسعار، الدعم، التوصية).\n\nاستخدم أسئلة مغلقة غالبًا (مقياس 1–5، اختيار من متعدد) مع إضافة سؤال أو سؤالين اختياريين مفتوحين في النهاية.\nMust include a question explicitly about “الرضا العام / Overall Satisfaction”.\nKeep wording neutral, simple, and easy to understand \n",
+          "length_chars": 573
+        }
+      },
+      "timing": {
+        "duration_ms": 8688
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": 100,
+        "questions": 80,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": 74.0,
+          "question_quality": 80.0,
+          "survey_coherence": 80.0,
+          "bilingual_alignment": 0.0,
+          "question_page_distribution": 100.0,
+          "controller_appropriateness": 70.0
+        }
+      },
+      "stability": {
+        "status": "unknown",
+        "telemetry": {
+          "has_duration": true,
+          "has_tokens": false,
+          "has_judge_scores": true
+        }
+      }
+    },
+    {
+      "run_id": "c46a58d8188b9f8c",
+      "source_id": "deepseek_eval_excel",
+      "model": {
+        "family": "deepseek",
+        "name": "deepseek",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": "64,10,11,17,24",
+        "thread_id": null,
+        "language": "bilingual",
+        "prompt": {
+          "text": "Create an Employee Experience Survey consider clear sections; each section must have exactly 5 neutral, easy questions suitable for online and phone interviews. Use closed-ended formats (Likert scale, multiple choice, frequency) and include “Prefer not to answer / لا أرغب بالإجابة” where appropriate.\nRequired sections: Work Environment / بيئة العمل (must include a direct question عن بيئة العمل مثل: الراحة، السلامة، توفر الأدوات، ملاءمة المكان/العمل عن بُعد، الضوضاء/الخصوصية), Role Clarity & Workload / وضوح الدور وحجم العمل (توقعات الدور، الأولويات، ضغط العمل، المواعيد النهائية), Manager Support / دعم المدير (التوجيه، التغذية الراجعة، العدالة، دعم إزالة العوائق), Team Collaboration / التعاون داخل الفريق (التواصل، التنسيق، حل الخلافات، التعاون بين الفرق), Growth & Development / التطور والنمو (التدريب، فرص التعلم، الترقيات), Engagement / الاندماج والرفاه (التوازن بين العمل والحياة، الإجهاد، التقدير، الأمان النفسي), / ",
+          "length_chars": 928
+        }
+      },
+      "timing": {
+        "duration_ms": 9823
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": 100,
+        "questions": 80,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": 73.0,
+          "question_quality": 80.0,
+          "survey_coherence": 85.0,
+          "bilingual_alignment": 0.0,
+          "question_page_distribution": 100.0,
+          "controller_appropriateness": 60.0
+        }
+      },
+      "stability": {
+        "status": "unknown",
+        "telemetry": {
+          "has_duration": true,
+          "has_tokens": false,
+          "has_judge_scores": true
+        }
+      }
+    },
+    {
+      "run_id": "a9f699966c7d9ae9",
+      "source_id": "deepseek_eval_excel",
+      "model": {
+        "family": "deepseek",
+        "name": "deepseek",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": "66,10,11,17,24",
+        "thread_id": null,
+        "language": "en",
+        "prompt": {
+          "text": "Generate a citizen’s feedback questionnaire on the Jordanian national football team efforts in the 2025 Arab Cup\nFile: https://realsoft.sharepoint.com/:w:/s/AITeam-AlKhwarzmiAI/IQBEM5bF0VnnRYeXgYsPWn99AQy-wu39Uzvv2g6fNDpyDWk?e=Yc9R5v",
+          "length_chars": 233
+        }
+      },
+      "timing": {
+        "duration_ms": null
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": null,
+        "questions": null,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": null,
+          "question_quality": null,
+          "survey_coherence": null,
+          "bilingual_alignment": null,
+          "question_page_distribution": null,
+          "controller_appropriateness": null
+        }
+      },
+      "stability": {
+        "status": "unknown",
+        "telemetry": {
+          "has_duration": false,
+          "has_tokens": false,
+          "has_judge_scores": false
+        }
+      }
+    },
+    {
+      "run_id": "7950ae14f5bfeea7",
+      "source_id": "deepseek_eval_excel",
+      "model": {
+        "family": "deepseek",
+        "name": "deepseek",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": "26,24,25",
+        "thread_id": null,
+        "language": "en",
+        "prompt": {
+          "text": "Domain: Health \nSurvey Name: Jordan Transportation \nPrompt: Create an Education Survey\nRequirements:\nOrganize the survey into clear sections (e.g., Overall Satisfaction, Teaching Quality, Curriculum & Content, Learning Environment, Digital Learning, Support Services, Safety & Inclusion, Recommendations).\nUse mostly closed-ended questions (Likert scale 1–5 and multiple choice), and include 1–2 optional open-ended questions at the end.\nMust include at least one explicit question about “Overall Satisfaction.”\nKeep wording neutral, simple, and easy to understand, appropriate for the target audience (students, parents, or teachers).\nInclude clear answer scales (e.g., 1–5 from Very Dissatisfied to Very Satisfied) and consistent response options across similar questions.",
+          "length_chars": 774
+        }
+      },
+      "timing": {
+        "duration_ms": 10725
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": 100,
+        "questions": 95,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": 91.0,
+          "question_quality": 95.0,
+          "survey_coherence": 95.0,
+          "bilingual_alignment": 0.0,
+          "question_page_distribution": 100.0,
+          "controller_appropriateness": 90.0
+        }
+      },
+      "stability": {
+        "status": "unknown",
+        "telemetry": {
+          "has_duration": true,
+          "has_tokens": false,
+          "has_judge_scores": true
+        }
+      }
+    },
+    {
+      "run_id": "3242b5df2b3cf7e1",
+      "source_id": "deepseek_eval_excel",
+      "model": {
+        "family": "deepseek",
+        "name": "deepseek",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": "1,24,25,89",
+        "thread_id": null,
+        "language": "en",
+        "prompt": {
+          "text": "Refer to the attached questionnaire and create it as is without any changes\nFile: https://realsoft.sharepoint.com/:w:/s/AITeam-AlKhwarzmiAI/IQAmXWTDDnmSRppyzJIjFL-6AS7CCq3RR2K1l_IuTgCyLPs?e=llWEIx",
+          "length_chars": 196
+        }
+      },
+      "timing": {
+        "duration_ms": null
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": null,
+        "questions": null,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": null,
+          "question_quality": null,
+          "survey_coherence": null,
+          "bilingual_alignment": null,
+          "question_page_distribution": null,
+          "controller_appropriateness": null
+        }
+      },
+      "stability": {
+        "status": "unknown",
+        "telemetry": {
+          "has_duration": false,
+          "has_tokens": false,
+          "has_judge_scores": false
+        }
+      }
+    },
+    {
+      "run_id": "04a1c49cafebbd09",
+      "source_id": "deepseek_eval_excel",
+      "model": {
+        "family": "deepseek",
+        "name": "deepseek",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": "1,10,11,17,24",
+        "thread_id": null,
+        "language": "en",
+        "prompt": {
+          "text": "Generate a library services satisfaction survey covering book collection, digital resources, and staff assistance",
+          "length_chars": 113
+        }
+      },
+      "timing": {
+        "duration_ms": 11265
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": 100,
+        "questions": 100,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": 97.0,
+          "question_quality": 100.0,
+          "survey_coherence": 100.0,
+          "bilingual_alignment": 0.0,
+          "question_page_distribution": 100.0,
+          "controller_appropriateness": 90.0
+        }
+      },
+      "stability": {
+        "status": "unknown",
+        "telemetry": {
+          "has_duration": true,
+          "has_tokens": false,
+          "has_judge_scores": true
+        }
+      }
+    },
+    {
+      "run_id": "dfc5eb6eac5d4800",
+      "source_id": "deepseek_eval_excel",
+      "model": {
+        "family": "deepseek",
+        "name": "deepseek",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": "1,10,11,17,24",
+        "thread_id": null,
+        "language": "en",
+        "prompt": {
+          "text": "Create a taxi service feedback survey covering driver behavior, vehicle condition, and booking experience",
+          "length_chars": 105
+        }
+      },
+      "timing": {
+        "duration_ms": 8835
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": 100,
+        "questions": 100,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": 95.0,
+          "question_quality": 100.0,
+          "survey_coherence": 100.0,
+          "bilingual_alignment": 0.0,
+          "question_page_distribution": 100.0,
+          "controller_appropriateness": 95.0
+        }
+      },
+      "stability": {
+        "status": "unknown",
+        "telemetry": {
+          "has_duration": true,
+          "has_tokens": false,
+          "has_judge_scores": true
+        }
+      }
+    },
+    {
+      "run_id": "c66a01f478fdf46f",
+      "source_id": "deepseek_eval_excel",
+      "model": {
+        "family": "deepseek",
+        "name": "deepseek",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": "1,10,11,17,24",
+        "thread_id": null,
+        "language": "en",
+        "prompt": {
+          "text": "Create a home security system satisfaction survey covering installation, monitoring, and customer support",
+          "length_chars": 105
+        }
+      },
+      "timing": {
+        "duration_ms": 6887
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": 95,
+        "questions": 95,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": 94.0,
+          "question_quality": 95.0,
+          "survey_coherence": 95.0,
+          "bilingual_alignment": 100.0,
+          "question_page_distribution": 95.0,
+          "controller_appropriateness": 90.0
+        }
+      },
+      "stability": {
+        "status": "unknown",
+        "telemetry": {
+          "has_duration": true,
+          "has_tokens": false,
+          "has_judge_scores": true
+        }
+      }
+    },
+    {
+      "run_id": "32ae825421206824",
+      "source_id": "deepseek_eval_excel",
+      "model": {
+        "family": "deepseek",
+        "name": "deepseek",
+        "variant": null,
+        "role": null
+      },
+      "task": {
+        "suite": "generation",
+        "scenario_id": "1,10,11,17,24",
+        "thread_id": null,
+        "language": "en",
+        "prompt": {
+          "text": "Generate a coworking space member satisfaction survey about facilities, internet, community, and pricing",
+          "length_chars": 104
+        }
+      },
+      "timing": {
+        "duration_ms": 7658
+      },
+      "usage": {
+        "tokens_total": null,
+        "tokens_input": null,
+        "tokens_output": null
+      },
+      "output_shape": {
+        "pages": 100,
+        "questions": 95,
+        "rules": null,
+        "invalid_question_types": []
+      },
+      "quality": {
+        "llm_judge": {
+          "overall": 95.0,
+          "question_quality": 95.0,
+          "survey_coherence": 100.0,
+          "bilingual_alignment": 100.0,
+          "question_page_distribution": 100.0,
+          "controller_appropriateness": 90.0
+        }
+      },
+      "stability": {
+        "status": "unknown",
+        "telemetry": {
+          "has_duration": true,
+          "has_tokens": false,
+          "has_judge_scores": true
+        }
+      }
+    }
+  ]
+}

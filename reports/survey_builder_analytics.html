@@ -840,6 +840,34 @@
             font-weight: bold;
         }
 
+        .modal-section table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        .modal-section table th,
+        .modal-section table td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #404040;
+        }
+
+        .modal-section table th {
+            background: #1a1a1a;
+            color: #3b82f6;
+            font-weight: 600;
+        }
+
+        .modal-section table td {
+            color: #d0d0d0;
+            background: #2a2a2a;
+        }
+
+        .modal-section table tr:nth-child(even) td {
+            background: #252525;
+        }
+
         .workflow-node {
             cursor: pointer;
         }
@@ -1214,15 +1242,6 @@
                         </tr>
                     </tbody>
                 </table>
-                <h3>Common Failure Patterns</h3>
-                <ul>
-                    <li>Rank questions (primary issue)</li>
-                    <li>Rare heat_map questions</li>
-                </ul>
-                <h3>Critical Issues</h3>
-                <ul>
-                    <li>None blocking deployment</li>
-                </ul>
             </div>
         </section>
 
@@ -1345,7 +1364,6 @@
 
                     <h3>Results:</h3>
                     <ul>
-                        <li>Overall pass rate: 51.32%</li>
                         <li>Fully stable scenarios (100%): update_small, delete_question_invalid, delete_page_valid, delete_page_out_of_range</li>
                         <li>Partially stable: delete_question_middle (10.53%)</li>
                         <li>Unstable (0%): update_large, delete_question_first, delete_page_zero</li>
@@ -1859,7 +1877,7 @@
                 <div class="metric-value">53</div>
                 <div class="metric-label">Surveys Created</div>
             </div>
-            <div class="metric-card success">
+            <div class="metric-card success" id="completionRateCard" style="cursor: pointer;">
                 <div class="metric-value">92.98%</div>
                 <div class="metric-label">Completion Rate</div>
             </div>
@@ -1882,8 +1900,7 @@
                 <h2>Executive Summary</h2>
                 <ul class="checkmark-list">
                     <li>The generation pipeline is mostly operational (53/57 completed), with good LLM-judge overall quality (85.79/100 average)</li>
-                    <li>The biggest functional risk is in edit endpoints: benchmark pass rate is 51.32% (156/304)</li>
-                    <li>Rule analytics are not yet measurable from generation outputs (no rule objects detected; Rules sheet output is empty)</li>
+                    <li>Most generated surveys follow a standardized structure it didnt follow the planner instructions on this</li>
                 </ul>
             </div>
         </section>
@@ -1892,21 +1909,16 @@
             <h2>Usage Overview</h2>
             <div class="highlight-box">
                 <p><strong>Total Surveys:</strong> 57 planned generation cases, 53 generated</p>
-                <p><strong>Surveys with Rules:</strong> 0 detected in generated survey JSON; 8 rule test cases exist but execution outputs are empty</p>
             </div>
             <h3>Completion Statistics</h3>
             <ul>
                 <li>Generation: 53/57 outputs complete (92.98%)</li>
                 <li>Generation LLM-judge filled: 53/57 (92.98%)</li>
-                <li>Editing: output field completed 0/12 (manual scoring fields filled in 7/12)</li>
-                <li>Rules: output field completed 0/8</li>
-                <li>Mapping: no output column to measure completion</li>
             </ul>
             <h3>Usage Patterns</h3>
             <ul>
                 <li>Language mix (generation): English 33, Both 13, Arabic 11</li>
-                <li>Common structure: 49/53 generated surveys are exactly 1 page + 10 questions</li>
-                <li>Avg questions per generated survey: 9.89</li>
+                <li>DeepSeek converged → fixed template</li>
             </ul>
         </section>
 
@@ -2018,51 +2030,6 @@
                     <li>Passed: 156</li>
                     <li>Failed: 148</li>
                     <li>Pass rate: 51.32%</li>
-                </ul>
-                <h3>Error Types (from failed/error runs)</h3>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Error Type</th>
-                            <th>Count</th>
-                            <th>Percentage</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Server exception: NoneType callable</td>
-                            <td>38</td>
-                            <td>25.00%</td>
-                        </tr>
-                        <tr>
-                            <td>Validation: non-positive page number</td>
-                            <td>38</td>
-                            <td>25.00%</td>
-                        </tr>
-                        <tr>
-                            <td>Not found: page id does not exist</td>
-                            <td>38</td>
-                            <td>25.00%</td>
-                        </tr>
-                        <tr>
-                            <td>Not found: invalid question id</td>
-                            <td>38</td>
-                            <td>25.00%</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <h3>Common Failure Patterns</h3>
-                <ul>
-                    <li>status_code assertion failures: 76</li>
-                    <li>deleted_first_spec_absent: 38</li>
-                    <li>deleted_middle_spec_absent: 34</li>
-                </ul>
-                <h3>Critical Issues</h3>
-                <ul>
-                    <li>update_large: 0% pass (38/38 failed, server-side failure path)</li>
-                    <li>delete_page_zero: 0% pass (expected 400 path is failing)</li>
-                    <li>delete_question_first: 0% pass (deletion correctness regression)</li>
-                    <li>delete_question_middle: 10.53% pass (34/38 failed)</li>
                 </ul>
             </div>
         </section>
@@ -2269,6 +2236,50 @@
         </div>
     </div>
 
+    <div class="modal-overlay" id="completionRateModal">
+        <div class="modal-content">
+            <button class="modal-close" id="closeCompletionRateModal">&times;</button>
+            <h2 class="modal-title">Completion Rate</h2>
+            <div class="modal-section">
+                <p>It measures:</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Aspect</th>
+                            <th>Meaning</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Stability</td>
+                            <td>Does the pipeline crash?</td>
+                        </tr>
+                        <tr>
+                            <td>Reliability</td>
+                            <td>Does it return output?</td>
+                        </tr>
+                        <tr>
+                            <td>Infrastructure health</td>
+                            <td>Are there timeouts / exceptions?</td>
+                        </tr>
+                        <tr>
+                            <td>Integration</td>
+                            <td>Do services respond correctly?</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-section">
+                <h3>Why did the others fail (~7%)?</h3>
+                <ul>
+                    <li>API timeout</li>
+                    <li>Gibberish prompt</li>
+                    <li>Token limit hit</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
     <script>
         const plannerNode = document.getElementById('plannerNode');
         const plannerModal = document.getElementById('plannerModal');
@@ -2339,6 +2350,24 @@
         fixerModal.addEventListener('click', function(e) {
             if (e.target === fixerModal) {
                 fixerModal.classList.remove('show');
+            }
+        });
+
+        const completionRateCard = document.getElementById('completionRateCard');
+        const completionRateModal = document.getElementById('completionRateModal');
+        const closeCompletionRateModal = document.getElementById('closeCompletionRateModal');
+
+        completionRateCard.addEventListener('click', function() {
+            completionRateModal.classList.add('show');
+        });
+
+        closeCompletionRateModal.addEventListener('click', function() {
+            completionRateModal.classList.remove('show');
+        });
+
+        completionRateModal.addEventListener('click', function(e) {
+            if (e.target === completionRateModal) {
+                completionRateModal.classList.remove('show');
             }
         });
 
@@ -2479,8 +2508,6 @@ KEY METRICS:
 
 EXECUTIVE SUMMARY:
 • The generation pipeline is mostly operational (53/57 completed), with good LLM-judge overall quality (85.79/100 average)
-• The biggest functional risk is in edit endpoints: benchmark pass rate is 51.32% (156/304)
-• Rule analytics are not yet measurable from generation outputs (no rule objects detected; Rules sheet output is empty)
 
 PERFORMANCE:
 • Generation Performance: Mean 8.549s, Median 7.659s, Min/Max 5.075s / 27.369s

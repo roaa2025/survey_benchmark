@@ -34,7 +34,12 @@ def index():
 @app.route('/dashboard/<path:filename>')
 def serve_dashboard(filename):
     """Serve dashboard files"""
-    return send_from_directory('dashboard', filename)
+    return send_from_directory('reports/dashboard', filename)
+
+@app.route('/metrics_unified.json')
+def serve_metrics_unified():
+    """Serve the unified metrics JSON file"""
+    return send_from_directory('reports', 'metrics_unified.json')
 
 
 @app.route('/draft_data.zip')

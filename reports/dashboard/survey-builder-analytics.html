@@ -76,6 +76,8 @@
         </header>
 
         <div id="dashboardContent">
+            <div id="loadingMessage" class="text-center text-gray-400 py-8">Loading metrics data...</div>
+            <div id="contentContainer" style="display: none;">
             <div class="grid md:grid-cols-2 gap-6 mb-6">
                 <div class="model-comparison-card">
                     <h3 class="text-2xl font-bold mb-4 text-blue-400">GPT Summary (Scenario-runtime narrative)</h3>
@@ -111,100 +113,256 @@
                         <h4 class="text-lg font-semibold mb-4">Flow Counts</h4>
                         <canvas id="flowCountsChart"></canvas>
                     </div>
-                    <div class="chart-container">
-                        <h4 class="text-lg font-semibold mb-4">Invalid Type Breakdown</h4>
-                        <canvas id="invalidTypeChart"></canvas>
-                    </div>
                 </div>
+            </div>
             </div>
         </div>
     </div>
 
     <script>
+        // Migration TODO: switch other pages to metrics_unified.json
         let charts = {};
+        let unifiedMetrics = null;
 
         document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('lastUpdated').textContent = new Date().toLocaleString();
-            renderModelComparison();
-            renderTelemetryEvidence();
+            loadUnifiedMetrics();
         });
 
+        function loadUnifiedMetrics() {
+            console.log('Loading unified metrics from /metrics_unified.json');
+            fetch('/metrics_unified.json')
+                .then(response => {
+                    console.log('Fetch response status:', response.status);
+                    if (!response.ok) {
+                        throw new Error(`Failed to load metrics: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    console.log('Loaded metrics data:', data);
+                    console.log('Total runs:', data.runs ? data.runs.length : 0);
+                    unifiedMetrics = data;
+                    document.getElementById('loadingMessage').style.display = 'none';
+                    document.getElementById('contentContainer').style.display = 'block';
+                    renderModelComparison();
+                    renderTelemetryEvidence();
+                })
+                .catch(error => {
+                    console.error('Error loading unified metrics:', error);
+                    document.getElementById('loadingMessage').innerHTML = `
+                        <div class="warning-badge">
+                            <strong>Error loading metrics data:</strong> ${error.message}<br>
+                            Please ensure metrics_unified.json exists in the reports/ directory.<br>
+                            <small>If opening via file://, you may need to serve via a web server (e.g., python -m http.server)</small><br>
+                            <small>Check browser console (F12) for detailed error information.</small>
+                        </div>
+                    `;
+                });
+        }
+
+        function filterRunsByModel(runs, modelFamily) {
+            return runs.filter(r => r.model && r.model.family === modelFamily);
+        }
+
+        function calculatePercentile(values, percentile) {
+            if (!values || values.length === 0) return null;
+            const sorted = [...values].sort((a, b) => a - b);
+            const index = Math.ceil((percentile / 100) * sorted.length) - 1;
+            return sorted[Math.max(0, index)];
+        }
+
+        function calculateCoverage(runs, fieldPath) {
+            if (!runs || runs.length === 0) return 0;
+            const parts = fieldPath.split('.');
+            const hasField = runs.filter(r => {
+                let value = r;
+                for (const part of parts) {
+                    value = value && value[part];
+                    if (value === undefined || value === null) return false;
+                }
+                return true;
+            }).length;
+            return (hasField / runs.length) * 100;
+        }
+
+        function formatDuration(ms) {
+            if (ms === null || ms === undefined) return 'N/A';
+            if (ms < 1000) return `${ms.toFixed(0)}ms`;
+            if (ms < 60000) return `${(ms / 1000).toFixed(2)}s`;
+            return `${(ms / 60000).toFixed(2)}m`;
+        }
+
+        function formatNumber(num, decimals = 1) {
+            if (num === null || num === undefined) return 'N/A';
+            return num.toFixed(decimals);
+        }
+
         function renderModelComparison() {
+            console.log('renderModelComparison called, unifiedMetrics:', unifiedMetrics);
+            if (!unifiedMetrics || !unifiedMetrics.runs) {
+                console.warn('No unified metrics data available');
+                return;
+            }
+
+            const runs = unifiedMetrics.runs;
+            const gptRuns = filterRunsByModel(runs, 'gpt');
+            const deepseekRuns = filterRunsByModel(runs, 'deepseek');
+
+            // Calculate GPT KPIs
+            const gptDurations = gptRuns.map(r => r.timing?.duration_ms).filter(d => d !== null && d !== undefined);
+            const gptTokens = gptRuns.map(r => r.usage?.tokens_total).filter(t => t !== null && t !== undefined);
+            const gptQuestions = gptRuns.map(r => r.output_shape?.questions).filter(q => q !== null && q !== undefined);
+            const gptPages = gptRuns.map(r => r.output_shape?.pages).filter(p => p !== null && p !== undefined);
+            const gptUniqueThreads = new Set(gptRuns.map(r => r.task?.thread_id).filter(Boolean)).size;
+
+            const gptP50Duration = calculatePercentile(gptDurations, 50);
+            const gptP95Duration = calculatePercentile(gptDurations, 95);
+            const gptP50Tokens = calculatePercentile(gptTokens, 50);
+            const gptP95Tokens = calculatePercentile(gptTokens, 95);
+            const gptAvgQuestions = gptQuestions.length > 0 ? gptQuestions.reduce((a, b) => a + b, 0) / gptQuestions.length : null;
+            const gptAvgPages = gptPages.length > 0 ? gptPages.reduce((a, b) => a + b, 0) / gptPages.length : null;
+            const gptTokenCoverage = calculateCoverage(gptRuns, 'usage.tokens_total');
+            const gptDurationCoverage = calculateCoverage(gptRuns, 'timing.duration_ms');
+
+            // Calculate DeepSeek KPIs
+            const deepseekDurations = deepseekRuns.map(r => r.timing?.duration_ms).filter(d => d !== null && d !== undefined);
+            const deepseekTokens = deepseekRuns.map(r => r.usage?.tokens_total).filter(t => t !== null && t !== undefined);
+            const deepseekQuestions = deepseekRuns.map(r => r.output_shape?.questions).filter(q => q !== null && q !== undefined);
+            const deepseekPages = deepseekRuns.map(r => r.output_shape?.pages).filter(p => p !== null && p !== undefined);
+            const deepseekJudgeScores = deepseekRuns.map(r => r.quality?.llm_judge?.overall).filter(s => s !== null && s !== undefined);
+
+            const deepseekP50Duration = calculatePercentile(deepseekDurations, 50);
+            const deepseekP95Duration = calculatePercentile(deepseekDurations, 95);
+            const deepseekP50Tokens = calculatePercentile(deepseekTokens, 50);
+            const deepseekP95Tokens = calculatePercentile(deepseekTokens, 95);
+            const deepseekAvgQuestions = deepseekQuestions.length > 0 ? deepseekQuestions.reduce((a, b) => a + b, 0) / deepseekQuestions.length : null;
+            const deepseekAvgPages = deepseekPages.length > 0 ? deepseekPages.reduce((a, b) => a + b, 0) / deepseekPages.length : null;
+            const deepseekAvgJudge = deepseekJudgeScores.length > 0 ? deepseekJudgeScores.reduce((a, b) => a + b, 0) / deepseekJudgeScores.length : null;
+            const deepseekTokenCoverage = calculateCoverage(deepseekRuns, 'usage.tokens_total');
+            const deepseekDurationCoverage = calculateCoverage(deepseekRuns, 'timing.duration_ms');
+            const deepseekJudgeCoverage = calculateCoverage(deepseekRuns, 'quality.llm_judge.overall');
+
+            // Render GPT Summary
             document.getElementById('gptSummary').innerHTML = `
-                <p class="mb-3">Reported "<strong>~62 minutes</strong>" reflects end-to-end benchmark scenario runtime (multi-stage pipeline: generation + validation + evaluation loops), not single survey generation latency.</p>
-                <p class="mb-3">it shows <strong>62 unique threads</strong>, <strong>173 EVAL_METRICS events</strong>, dominated by <strong>fast_generate (167 events)</strong>.</p>
-                <p class="mb-3">Data integrity looks strong: <strong>0 duplicate question IDs</strong>, <strong>0 missing required fields</strong>.</p>
-                <p class="mb-0">Main schema gap: unsupported question types, mostly <strong>rank (67)</strong> and rare <strong>heat_map (2)</strong>.</p>
+                <p class="mb-3"><strong>Runs:</strong> ${gptRuns.length}</p>
+                <p class="mb-3"><strong>Duration:</strong> p50 ${formatDuration(gptP50Duration)}, p95 ${formatDuration(gptP95Duration)} (coverage: ${gptDurationCoverage.toFixed(1)}%)</p>
+                <p class="mb-3"><strong>Tokens:</strong> p50 ${gptP50Tokens ? gptP50Tokens.toLocaleString() : 'N/A'}, p95 ${gptP95Tokens ? gptP95Tokens.toLocaleString() : 'N/A'} (coverage: ${gptTokenCoverage.toFixed(1)}%)</p>
+                <p class="mb-3"><strong>Avg output:</strong> ${formatNumber(gptAvgQuestions, 1)} questions, ${formatNumber(gptAvgPages, 1)} pages</p>
+                <p class="mb-3"><strong>Judge scores:</strong> N/A (not available in GPT telemetry)</p>
+                <p class="mb-0">gpt follows the plans structure in the number of pages and questions</p>
             `;
 
+            // Render DeepSeek Summary
             document.getElementById('deepseekSummary').innerHTML = `
-                <p class="mb-3">Reports <strong>8.55s avg generation time</strong> (per generation call).</p>
-                <p class="mb-3">Reports <strong>57 planned cases</strong>, <strong>53 completed</strong> (completion rate <strong>92.98%</strong>).</p>
-                <p class="mb-0">Highlights editing benchmark risk: <strong>51.32% pass rate</strong> and identifies clustered failures.</p>
+                <p class="mb-3"><strong>Runs:</strong> ${deepseekRuns.length}</p>
+                <p class="mb-3"><strong>Duration:</strong> p50 ${formatDuration(deepseekP50Duration)}, p95 ${formatDuration(deepseekP95Duration)} (coverage: ${deepseekDurationCoverage.toFixed(1)}%)</p>
+                <p class="mb-3"><strong>Tokens:</strong> p50 ${deepseekP50Tokens ? deepseekP50Tokens.toLocaleString() : 'N/A'}, p95 ${deepseekP95Tokens ? deepseekP95Tokens.toLocaleString() : 'N/A'} (coverage: ${deepseekTokenCoverage.toFixed(1)}%)</p>
+                <p class="mb-3"><strong>Avg output:</strong> ${formatNumber(deepseekAvgQuestions, 1)} questions, ${formatNumber(deepseekAvgPages, 1)} pages</p>
+                <p class="mb-3"><strong>Avg judge score:</strong> ${formatNumber(deepseekAvgJudge, 2)} (coverage: ${deepseekJudgeCoverage.toFixed(1)}%)</p>
+                <p class="mb-0">didnt follow the plans structure most of the surveys had a fixed number</p>
             `;
 
+            // Performance reconciliation
             document.getElementById('performanceReconciliation').innerHTML = `
-                <p class="mb-3"><strong>Minutes vs seconds are different clocks:</strong></p>
+                <p class="mb-3"><strong>Performance comparison:</strong></p>
                 <ul class="list-disc list-inside mb-3 space-y-2">
-                    <li>GPT timing is scenario runtime (minutes; multi-step evaluation).</li>
-                    <li>DeepSeek timing is single-call generation latency (seconds).</li>
+                    <li>GPT-4o: ${gptRuns.length} runs, ${formatDuration(gptP50Duration)} median duration</li>
+                    <li>DeepSeek: ${deepseekRuns.length} runs, ${formatDuration(deepseekP50Duration)} median duration</li>
                 </ul>
-                <p class="mb-2"><strong>To compare model speed fairly:</strong></p>
-                <ul class="list-disc list-inside space-y-2">
-                    <li>instrument the same "generation_start → generation_end" timer for both models,</li>
-                    <li>or extract per-call durations from the same log fields.</li>
-                </ul>
+                <p class="mb-2"><strong>Note:</strong> Timing may reflect different measurement scopes (scenario runtime vs single-call latency).</p>
             `;
 
+            // Rules reconciliation (placeholder - rules data not in unified schema yet)
             document.getElementById('rulesReconciliation').innerHTML = `
-                <p class="mb-3">App-log shows only <strong>2 rules-metric events</strong> (limited telemetry coverage), both clean (0 invalid refs / 0 missing conditions/actions).</p>
-                <p class="mb-0">DeepSeek claims rules outputs are missing in the generation JSON snapshot → likely a pipeline/output export gap, not validator failure.</p>
+                <p class="mb-3">Rules telemetry data not yet available in unified metrics.</p>
+                <p class="mb-0">Rules performance is tracked via Rules Validation Benchmark (separate suite). Rule-count telemetry is not emitted per generation run yet</p>
             `;
 
+            // Reporting structure
             document.getElementById('reportingStructure').innerHTML = `
-                <p class="mb-2"><strong>Data source A:</strong> App-log structural telemetry (EVAL_METRICS: integrity + schema + unsupported types)</p>
-                <p class="mb-2"><strong>Data source B:</strong> Evaluation workbook (LLM-judge quality + per-call latency + edit benchmark outcomes)</p>
-                <p class="mb-0 text-sm text-gray-400 mt-3">Label them separately and cross-reference.</p>
+                <p class="mb-2"><strong>Unified data source:</strong> metrics_unified.json consolidates GPT telemetry and DeepSeek evaluation data.</p>
+                <p class="mb-2"><strong>Schema version:</strong> ${unifiedMetrics.schema_version || 'unknown'}</p>
+                <p class="mb-0 text-sm text-gray-400 mt-3">Generated at: ${unifiedMetrics.generated_at || 'unknown'}</p>
             `;
         }
 
         function renderTelemetryEvidence() {
+            if (!unifiedMetrics || !unifiedMetrics.runs) {
+                return;
+            }
+
+            const runs = unifiedMetrics.runs;
+            const gptRuns = filterRunsByModel(runs, 'gpt');
+            const deepseekRuns = filterRunsByModel(runs, 'deepseek');
+
+            // Calculate telemetry coverage
+            const allRuns = [...gptRuns, ...deepseekRuns];
+            const hasTokens = calculateCoverage(allRuns, 'usage.tokens_total');
+            const hasDuration = calculateCoverage(allRuns, 'timing.duration_ms');
+            const hasJudgeScores = calculateCoverage(allRuns, 'quality.llm_judge.overall');
+
+            // Count invalid question types from GPT runs
+            const invalidTypeCounts = {};
+            gptRuns.forEach(r => {
+                const invalidTypes = r.output_shape?.invalid_question_types || [];
+                invalidTypes.forEach(type => {
+                    invalidTypeCounts[type] = (invalidTypeCounts[type] || 0) + 1;
+                });
+            });
+            const totalInvalidTypes = Object.values(invalidTypeCounts).reduce((a, b) => a + b, 0);
+            const topInvalidTypes = Object.entries(invalidTypeCounts)
+                .sort((a, b) => b[1] - a[1])
+                .slice(0, 2);
+
             const kpiSection = document.getElementById('telemetryKPIs');
             const kpis = [
-                { label: 'Unique threads', value: '62' },
-                { label: 'Total metrics events', value: '173' },
-                { label: 'fast_generate events', value: '167' },
-                { label: 'Invalid type total', value: '69' },
-                { label: 'Rank vs heat_map', value: '67 / 2' },
-                { label: 'Rules telemetry events', value: '2', warning: true }
+                { label: 'Total runs', value: allRuns.length.toString() },
+                { label: 'GPT runs', value: gptRuns.length.toString() },
+                { label: 'DeepSeek runs', value: deepseekRuns.length.toString() },
+                { label: 'Duration coverage', value: `${hasDuration.toFixed(1)}%` },
+                { label: 'Judge coverage', value: `${hasJudgeScores.toFixed(1)}%` }
             ];
 
             kpiSection.innerHTML = kpis.map(kpi => `
-                <div class="kpi-card ${kpi.warning ? 'border-2 border-yellow-500' : ''}">
+                <div class="kpi-card">
                     <div class="kpi-value">${kpi.value}</div>
                     <div class="kpi-label">${kpi.label}</div>
                 </div>
             `).join('');
 
             const warningSection = document.getElementById('telemetryWarning');
-            warningSection.innerHTML = '<div class="warning-badge"><strong>Rules telemetry coverage limited (2 events) — do not generalize.</strong></div>';
+            warningSection.innerHTML = '';
+            const warnings = [];
+            if (hasDuration < 50) warnings.push('Duration telemetry coverage is low');
+            if (hasJudgeScores < 50) warnings.push('Judge score coverage is low');
 
-            renderFlowCountsChart();
-            renderInvalidTypeChart();
+            if (warnings.length > 0) {
+                warningSection.innerHTML = `<div class="warning-badge"><strong>Telemetry gaps:</strong> ${warnings.join('; ')}</div>`;
+            }
+
+            // Render charts with actual data
+            renderFlowCountsChart(gptRuns);
         }
 
-        function renderFlowCountsChart() {
+        function renderFlowCountsChart(gptRuns) {
             const ctx = document.getElementById('flowCountsChart').getContext('2d');
             
             if (charts.flowCounts) charts.flowCounts.destroy();
             
+            // Count runs by source (simplified - we don't have flow data in unified schema yet)
+            const sourceCounts = {
+                'GPT-4o': gptRuns.length,
+                'DeepSeek': filterRunsByModel(unifiedMetrics.runs, 'deepseek').length
+            };
+            
             charts.flowCounts = new Chart(ctx, {
                 type: 'bar',
                 data: {
-                    labels: ['fast_generate', 'update', 'generate_rules', 'generate_questions'],
+                    labels: Object.keys(sourceCounts),
                     datasets: [{
-                        label: 'Event Count',
-                        data: [167, 4, 2, 0],
+                        label: 'Run Count',
+                        data: Object.values(sourceCounts),
                         backgroundColor: '#3b82f6',
                         borderColor: '#2563eb',
                         borderWidth: 1
@@ -224,29 +382,6 @@
             });
         }
 
-        function renderInvalidTypeChart() {
-            const ctx = document.getElementById('invalidTypeChart').getContext('2d');
-            
-            if (charts.invalidType) charts.invalidType.destroy();
-            
-            charts.invalidType = new Chart(ctx, {
-                type: 'doughnut',
-                data: {
-                    labels: ['rank', 'heat_map'],
-                    datasets: [{
-                        data: [67, 2],
-                        backgroundColor: ['#3b82f6', '#10b981']
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: true,
-                    plugins: {
-                        legend: { labels: { color: '#e0e0e0' }, position: 'bottom' }
-                    }
-                }
-            });
-        }
     </script>
 </body>
 </html>
