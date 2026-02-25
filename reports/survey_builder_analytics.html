@@ -1003,6 +1003,7 @@
                 <option value="">-- Select a model --</option>
                 <option value="gpt4o">GPT-4o</option>
                 <option value="deepseek">DeepSeek</option>
+                <option value="gpt5mini">gpt-5-mini</option>
             </select>
         </div>
     </div>
@@ -2090,6 +2091,215 @@
     </div>
     </div>
 
+    <div class="analytics-dashboard" id="gpt5Dashboard">
+        <button class="copy-button" onclick="copyGPT5Summary()">Copy Summary</button>
+
+        <div class="container">
+        <header>
+            <h1>Survey Builder Analytics Dashboard</h1>
+            <p class="subtitle">GPT-5 Mini Evaluation Metrics · Survey Builder Platform</p>
+        </header>
+
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <div class="metric-value">57</div>
+                <div class="metric-label">Test Cases</div>
+            </div>
+            <div class="metric-card success" id="gpt5CompletionRateCard" style="cursor: pointer;">
+                <div class="metric-value">87.7%</div>
+                <div class="metric-label">Completion Rate</div>
+            </div>
+            <div class="metric-card warning">
+                <div class="metric-value">34.2s</div>
+                <div class="metric-label">Avg Generation Time</div>
+            </div>
+            <div class="metric-card purple">
+                <div class="metric-value">80.0</div>
+                <div class="metric-label">Avg Quality Score</div>
+            </div>
+        </div>
+
+        <section>
+            <div class="info-card">
+                <h2>Executive Summary</h2>
+                <ul class="checkmark-list">
+                    <li>Evaluation analyzed <strong>57 test scenarios</strong> from the benchmark dataset</li>
+                    <li><strong>50 test cases completed</strong> successfully (87.7% completion rate)</li>
+                    <li>Average generation time of <strong>34.2 seconds</strong> per test case</li>
+                    <li>Median generation time of <strong>31.5 seconds</strong> indicates consistent performance</li>
+                    <li>Overall quality score average of <strong>80.0/100</strong> with median of <strong>88.0</strong></li>
+                    <li>Quality metrics show strong performance in question quality, survey coherence, and plan quality</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Usage Overview</h2>
+            <div class="highlight-box">
+                <p><strong>Total Test Cases:</strong> 57 planned evaluation scenarios, 50 completed</p>
+            </div>
+            <h3>Completion Statistics</h3>
+            <ul>
+                <li>Generation completed: 50/57 test cases (87.7%)</li>
+                <li>Generation time recorded: 50/57 (87.7%)</li>
+                <li>Overall score recorded: 53/57 (93.0%)</li>
+            </ul>
+            <h3>Test Scenario Distribution</h3>
+            <ul>
+                <li>Test IDs range from T1 to T57</li>
+                <li>Multiple scenario types covered: Core prompt handling, validation, edge cases</li>
+                <li>Mixed language support: English, Arabic, and bilingual scenarios</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Performance Metrics</h2>
+            <div class="success-card">
+                <h3>Generation Performance</h3>
+                <ul>
+                    <li>Mean: 34.2s</li>
+                    <li>Median: 31.5s</li>
+                    <li>Min/Max: 17.6s / 62.7s</li>
+                    <li>Standard Deviation: 10.9s</li>
+                </ul>
+            </div>
+            <h3>Performance Distribution (Generation time)</h3>
+            <div class="stat-bar">
+                <div class="stat-bar-label">&lt; 20 seconds</div>
+                <div class="stat-bar-fill" style="width: 8%;">4</div>
+            </div>
+            <div class="stat-bar">
+                <div class="stat-bar-label">20-30 seconds</div>
+                <div class="stat-bar-fill" style="width: 40%;">20</div>
+            </div>
+            <div class="stat-bar">
+                <div class="stat-bar-label">30-40 seconds</div>
+                <div class="stat-bar-fill" style="width: 36%;">18</div>
+            </div>
+            <div class="stat-bar">
+                <div class="stat-bar-label">40-50 seconds</div>
+                <div class="stat-bar-fill" style="width: 10%;">5</div>
+            </div>
+            <div class="stat-bar">
+                <div class="stat-bar-label">&gt; 50 seconds</div>
+                <div class="stat-bar-fill" style="width: 6%;">3</div>
+            </div>
+            <h3>Performance Insights</h3>
+            <ul>
+                <li>Most test cases (76%) complete within 20-40 seconds</li>
+                <li>Performance is consistent with low variance around the median</li>
+                <li>Longer generation times (>50s) are rare (6% of cases)</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Quality Scores Analysis</h2>
+            <div class="info-card">
+                <h3>Overall Quality Metrics</h3>
+                <ul>
+                    <li><strong>Overall Score:</strong> Mean 80.0, Median 88.0, Range 0-96</li>
+                    <li><strong>Score Distribution:</strong> 75th percentile: 89.0, 25th percentile: 78.0</li>
+                    <li><strong>High Quality:</strong> 75% of tests score above 78.0</li>
+                </ul>
+            </div>
+            <h3>Detailed Quality Breakdown</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Quality Metric</th>
+                        <th>Average Score</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Question Quality Score</td>
+                        <td>~90-95</td>
+                        <td>Excellent</td>
+                    </tr>
+                    <tr>
+                        <td>Survey Coherence Score</td>
+                        <td>~90-95</td>
+                        <td>Excellent</td>
+                    </tr>
+                    <tr>
+                        <td>Plan Quality Score</td>
+                        <td>~75-90</td>
+                        <td>Good</td>
+                    </tr>
+                    <tr>
+                        <td>Question Type Diversity Score</td>
+                        <td>~80-95</td>
+                        <td>Good</td>
+                    </tr>
+                    <tr>
+                        <td>Validation Quality Score</td>
+                        <td>~80-95</td>
+                        <td>Good</td>
+                    </tr>
+                    <tr>
+                        <td>Controller Appropriateness Score</td>
+                        <td>~85-95</td>
+                        <td>Excellent</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3>Quality Insights</h3>
+            <ul>
+                <li>Question quality and survey coherence consistently score high (90-95 range)</li>
+                <li>Plan quality shows good performance with room for improvement</li>
+                <li>Controller appropriateness demonstrates strong understanding of question types</li>
+                <li>Validation quality indicates proper adherence to survey structure rules</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Evaluation Coverage</h2>
+            <div class="success-card">
+                <h3>Test Scenario Coverage</h3>
+                <ul>
+                    <li>Core prompt handling (English and Arabic)</li>
+                    <li>Language handling and bilingual scenarios</li>
+                    <li>Prompt validation (empty, whitespace, length limits)</li>
+                    <li>Question count and page distribution validation</li>
+                    <li>Edge cases and error handling</li>
+                </ul>
+            </div>
+            <h3>Evaluation Methods</h3>
+            <ul>
+                <li>LLM Judge evaluation with detailed scoring</li>
+                <li>Multi-dimensional quality assessment</li>
+                <li>Automated validation checks</li>
+                <li>Performance timing measurements</li>
+            </ul>
+        </section>
+
+        <section>
+            <div class="warning-card">
+                <h2>Limitations & Notes</h2>
+                <h3>Data Considerations</h3>
+                <ul>
+                    <li>7 test cases (12.3%) did not complete generation due to:
+                        <ul style="margin-top: 8px; margin-left: 20px;">
+                            <li>Gibberish prompts (random characters) - rejected by validation</li>
+                            <li>Too short prompts - below minimum length requirement</li>
+                            <li>Unsupported content - requests for PII/sensitive financial data blocked</li>
+                        </ul>
+                    </li>
+                    <li>4 test cases (T35, T36, T55, T57) missing overall score data - these correspond to failed generation attempts with unsupported content</li>
+                    <li>Quality scores extracted from LLM Judge JSON evaluations</li>
+                    <li>Failed test cases received overall_score of 0 with "No survey content to evaluate" in LLM Judge assessments</li>
+                </ul>
+            </div>
+        </section>
+
+        <footer>
+            <p>Last updated: <span id="gpt5-last-updated"></span></p>
+            <p>Data source: Test Scenarios and Eval Dataset · GPT-5 Mini Evaluation</p>
+        </footer>
+    </div>
+    </div>
+
     <div class="modal-overlay" id="plannerModal">
         <div class="modal-content">
             <button class="modal-close" id="closePlannerModal">&times;</button>
@@ -2403,6 +2613,13 @@
             }
         });
 
+        const gpt5CompletionRateCard = document.getElementById('gpt5CompletionRateCard');
+        if (gpt5CompletionRateCard) {
+            gpt5CompletionRateCard.addEventListener('click', function() {
+                completionRateModal.classList.add('show');
+            });
+        }
+
         const analyticsCompletionRateCard = document.getElementById('analyticsCompletionRateCard');
         const analyticsCompletionRateModal = document.getElementById('analyticsCompletionRateModal');
         const closeAnalyticsCompletionRateModal = document.getElementById('closeAnalyticsCompletionRateModal');
@@ -2427,21 +2644,31 @@
             const landingPage = document.getElementById('landingPage');
             const analyticsDashboard = document.getElementById('analyticsDashboard');
             const deepseekDashboard = document.getElementById('deepseekDashboard');
+            const gpt5Dashboard = document.getElementById('gpt5Dashboard');
 
             if (selectedModel === 'gpt4o') {
                 landingPage.style.display = 'none';
                 analyticsDashboard.classList.add('show');
                 deepseekDashboard.classList.remove('show');
+                if (gpt5Dashboard) gpt5Dashboard.classList.remove('show');
                 document.body.style.padding = '20px';
             } else if (selectedModel === 'deepseek') {
                 landingPage.style.display = 'none';
                 analyticsDashboard.classList.remove('show');
                 deepseekDashboard.classList.add('show');
+                if (gpt5Dashboard) gpt5Dashboard.classList.remove('show');
+                document.body.style.padding = '20px';
+            } else if (selectedModel === 'gpt5mini') {
+                landingPage.style.display = 'none';
+                analyticsDashboard.classList.remove('show');
+                deepseekDashboard.classList.remove('show');
+                if (gpt5Dashboard) gpt5Dashboard.classList.add('show');
                 document.body.style.padding = '20px';
             } else {
                 landingPage.style.display = 'flex';
                 analyticsDashboard.classList.remove('show');
                 deepseekDashboard.classList.remove('show');
+                if (gpt5Dashboard) gpt5Dashboard.classList.remove('show');
             }
         }
 
@@ -2582,6 +2809,68 @@ ACTION ITEMS:
             navigator.clipboard.writeText(summaryText).then(function() {
                 const deepseekDashboard = document.getElementById('deepseekDashboard');
                 const button = deepseekDashboard.querySelector('.copy-button');
+                const originalText = button.textContent;
+                button.textContent = 'Copied!';
+                button.style.background = '#10b981';
+                setTimeout(function() {
+                    button.textContent = originalText;
+                    button.style.background = '#3b82f6';
+                }, 2000);
+            }).catch(function(err) {
+                alert('Failed to copy text. Please select and copy manually.');
+                console.error('Copy failed:', err);
+            });
+        }
+
+        function copyGPT5Summary() {
+            const summaryText = `Survey Builder Analytics Dashboard - GPT-5 Mini
+
+Evaluation metrics from test scenarios dataset
+
+KEY METRICS:
+• Test Cases: 57 total evaluation scenarios
+• Completion Rate: 87.7% (50/57 completed)
+• Avg Generation Time: 34.2 seconds
+• Avg Quality Score: 80.0/100 (median: 88.0)
+
+EXECUTIVE SUMMARY:
+• Evaluation analyzed 57 test scenarios from the benchmark dataset
+• 50 test cases completed successfully (87.7% completion rate)
+• Average generation time of 34.2 seconds per test case
+• Median generation time of 31.5 seconds indicates consistent performance
+• Overall quality score average of 80.0/100 with median of 88.0
+• Quality metrics show strong performance in question quality, survey coherence, and plan quality
+
+PERFORMANCE:
+• Generation Performance: Mean 34.2s, Median 31.5s, Min/Max 17.6s / 62.7s
+• Performance Distribution: 20-30 seconds: 40%, 30-40 seconds: 36%, >40 seconds: 16%
+• Most test cases (76%) complete within 20-40 seconds
+• Performance is consistent with low variance around the median
+
+QUALITY SCORES:
+• Overall Score: Mean 80.0, Median 88.0, Range 0-96
+• Question Quality Score: ~90-95 (Excellent)
+• Survey Coherence Score: ~90-95 (Excellent)
+• Plan Quality Score: ~75-90 (Good)
+• Question Type Diversity Score: ~80-95 (Good)
+• Validation Quality Score: ~80-95 (Good)
+• Controller Appropriateness Score: ~85-95 (Excellent)
+
+EVALUATION COVERAGE:
+• Core prompt handling (English and Arabic)
+• Language handling and bilingual scenarios
+• Prompt validation (empty, whitespace, length limits)
+• Question count and page distribution validation
+• Edge cases and error handling
+
+LIMITATIONS:
+• 7 test cases (12.3%) did not complete generation
+• 4 test cases missing overall score data
+• Quality scores extracted from LLM Judge JSON evaluations`;
+
+            navigator.clipboard.writeText(summaryText).then(function() {
+                const gpt5Dashboard = document.getElementById('gpt5Dashboard');
+                const button = gpt5Dashboard.querySelector('.copy-button');
                 const originalText = button.textContent;
                 button.textContent = 'Copied!';
                 button.style.background = '#10b981';
