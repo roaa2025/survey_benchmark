@@ -489,6 +489,16 @@
             margin-bottom: 10px;
         }
 
+        #qualityBreakdownHeading {
+            cursor: pointer;
+            color: #3b82f6;
+            transition: color 0.3s;
+        }
+
+        #qualityBreakdownHeading:hover {
+            color: #60a5fa;
+        }
+
         ul {
             list-style: none;
             padding-left: 0;
@@ -2202,7 +2212,7 @@
                     <li><strong>High Quality:</strong> 75% of tests score above 78.0</li>
                 </ul>
             </div>
-            <h3>Detailed Quality Breakdown</h3>
+            <h3 id="qualityBreakdownHeading">Detailed Quality Breakdown</h3>
             <table>
                 <thead>
                     <tr>
@@ -2522,6 +2532,86 @@
         </div>
     </div>
 
+    <div class="modal-overlay" id="qualityBreakdownModal">
+        <div class="modal-content">
+            <button class="modal-close" id="closeQualityBreakdownModal">&times;</button>
+            <h2 class="modal-title">How Quality Metrics Are Measured</h2>
+            <div class="modal-section">
+                <h3>Question Quality (0-100)</h3>
+                <ul>
+                    <li>Clarity: wording is precise, unambiguous, and understandable</li>
+                    <li>Answerability: question can be reasonably answered without missing information</li>
+                    <li>Non-leading wording: avoids bias, persuasion, or presuppositions</li>
+                </ul>
+            </div>
+            <div class="modal-section">
+                <h3>Survey Coherence (0-100)</h3>
+                <ul>
+                    <li>Internal consistency: no contradictions across questions</li>
+                    <li>Redundancy control: avoids unnecessary repetition</li>
+                    <li>Coverage fit: questions align with survey's user prompt or type</li>
+                    <li>Logical grouping: sensible ordering and grouping across pages</li>
+                </ul>
+            </div>
+            <div class="modal-section">
+                <h3>Plan Quality (0-100)</h3>
+                <ul>
+                    <li>Plan structure coherence: page organization and logical question distribution</li>
+                    <li>Plan-to-question alignment: generated questions match plan specifications</li>
+                    <li>Plan metadata accuracy: title, type, and language consistency</li>
+                    <li>Spec completeness: percentage of required spec fields properly populated</li>
+                </ul>
+            </div>
+            <div class="modal-section">
+                <h3>Question Type Diversity (0-100)</h3>
+                <ul>
+                    <li>Question type distribution: variety across different question types</li>
+                    <li>Type appropriateness: each question uses the most appropriate type</li>
+                    <li>Type diversity index: number of unique question types used relative to total</li>
+                </ul>
+            </div>
+            <div class="modal-section">
+                <h3>Validation Quality (0-100)</h3>
+                <ul>
+                    <li>Spec coverage: all required specs appear exactly once</li>
+                    <li>Type matching: question types match their specifications</li>
+                    <li>Options validation: selection questions have appropriate options</li>
+                    <li>Scale validation: rating questions have proper scale ranges</li>
+                </ul>
+            </div>
+            <div class="modal-section">
+                <h3>Controller Appropriateness (0-100)</h3>
+                <ul>
+                    <li>Response Controllers: use of correct and appropriate response controllers (e.g., multiple choice, text input, sliders) for the question being asked</li>
+                </ul>
+            </div>
+            <div class="modal-section">
+                <h3>Question-Page Distribution (0-100)</h3>
+                <ul>
+                    <li>Question Distribution: balanced and logical distribution of questions across pages based on user request</li>
+                </ul>
+            </div>
+            <div class="modal-section">
+                <h3>Bilingual Alignment (0-100)</h3>
+                <ul>
+                    <li>Semantic equivalence: meaning is preserved across languages</li>
+                    <li>Terminology consistency: key concepts are translated consistently</li>
+                    <li>Cultural and UX appropriateness: natural phrasing, comparable tone and formality</li>
+                </ul>
+            </div>
+            <div class="modal-section">
+                <h3>Score to Label Conversion</h3>
+                <p>Numeric scores (0-100) from the LLM Judge are converted to labels:</p>
+                <ul>
+                    <li>90-100: Excellent</li>
+                    <li>75-89: Good</li>
+                    <li>60-74: Fair</li>
+                    <li>Below 60: Poor</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
     <script>
         const plannerNode = document.getElementById('plannerNode');
         const plannerModal = document.getElementById('plannerModal');
@@ -2637,6 +2727,28 @@
                 analyticsCompletionRateModal.classList.remove('show');
             }
         });
+
+        const qualityBreakdownHeading = document.getElementById('qualityBreakdownHeading');
+        const qualityBreakdownModal = document.getElementById('qualityBreakdownModal');
+        const closeQualityBreakdownModal = document.getElementById('closeQualityBreakdownModal');
+
+        if (qualityBreakdownHeading && qualityBreakdownModal) {
+            qualityBreakdownHeading.addEventListener('click', function() {
+                qualityBreakdownModal.classList.add('show');
+            });
+
+            if (closeQualityBreakdownModal) {
+                closeQualityBreakdownModal.addEventListener('click', function() {
+                    qualityBreakdownModal.classList.remove('show');
+                });
+            }
+
+            qualityBreakdownModal.addEventListener('click', function(e) {
+                if (e.target === qualityBreakdownModal) {
+                    qualityBreakdownModal.classList.remove('show');
+                }
+            });
+        }
 
         function handleModelSelection() {
             const select = document.getElementById('modelSelect');
