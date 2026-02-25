@@ -886,6 +886,60 @@
             background: #252525;
         }
 
+        #gpt5AgentsModal .modal-content {
+            max-width: 1200px;
+            width: 95%;
+            max-height: 90vh;
+            padding: 40px;
+        }
+
+        #gpt5AgentsModal .modal-section {
+            overflow-x: auto;
+        }
+
+        #gpt5AgentsModal .modal-section table {
+            min-width: 1000px;
+            white-space: normal;
+        }
+
+        #gpt5AgentsModal .modal-section table th,
+        #gpt5AgentsModal .modal-section table td {
+            padding: 16px;
+            vertical-align: top;
+            word-wrap: break-word;
+            max-width: 300px;
+        }
+
+        #gpt5AgentsModal .modal-section table th:nth-child(1),
+        #gpt5AgentsModal .modal-section table td:nth-child(1) {
+            min-width: 120px;
+            max-width: 150px;
+        }
+
+        #gpt5AgentsModal .modal-section table th:nth-child(2),
+        #gpt5AgentsModal .modal-section table td:nth-child(2) {
+            min-width: 100px;
+            max-width: 120px;
+        }
+
+        #gpt5AgentsModal .modal-section table th:nth-child(3),
+        #gpt5AgentsModal .modal-section table td:nth-child(3) {
+            min-width: 200px;
+            max-width: 250px;
+        }
+
+        #gpt5AgentsModal .modal-section table th:nth-child(4),
+        #gpt5AgentsModal .modal-section table td:nth-child(4) {
+            min-width: 180px;
+            max-width: 220px;
+        }
+
+        #gpt5AgentsModal .modal-section table th:nth-child(5),
+        #gpt5AgentsModal .modal-section table td:nth-child(5) {
+            min-width: 250px;
+            max-width: 400px;
+        }
+
         .workflow-node {
             cursor: pointer;
         }
@@ -953,6 +1007,17 @@
             .modal-content {
                 padding: 20px;
                 max-width: 95%;
+            }
+
+            #gpt5AgentsModal .modal-content {
+                padding: 20px;
+                max-width: 98%;
+            }
+
+            #gpt5AgentsModal .modal-section table th,
+            #gpt5AgentsModal .modal-section table td {
+                padding: 10px;
+                font-size: 0.9em;
             }
 
             .draft-data-button {
@@ -1912,33 +1977,6 @@
         </div>
 
         <section>
-            <div class="info-card">
-                <h2>Executive Summary</h2>
-                <ul class="checkmark-list">
-                    <li>The generation pipeline is mostly operational (53/57 completed), with good LLM-judge overall quality (85.79/100 average)</li>
-                    <li>Most generated surveys follow a standardized structure it didnt follow the planner instructions on this</li>
-                </ul>
-            </div>
-        </section>
-
-        <section>
-            <h2>Usage Overview</h2>
-            <div class="highlight-box">
-                <p><strong>Total Surveys:</strong> 57 planned generation cases, 53 generated</p>
-            </div>
-            <h3>Completion Statistics</h3>
-            <ul>
-                <li>Generation: 53/57 outputs complete (92.98%)</li>
-                <li>Generation LLM-judge filled: 53/57 (92.98%)</li>
-            </ul>
-            <h3>Usage Patterns</h3>
-            <ul>
-                <li>Language mix (generation): English 33, Both 13, Arabic 11</li>
-                <li>DeepSeek converged → fixed template</li>
-            </ul>
-        </section>
-
-        <section>
             <h2>Performance Metrics</h2>
             <div class="success-card">
                 <h3>Generation Performance</h3>
@@ -2147,6 +2185,10 @@
                 <div class="metric-value">80.0</div>
                 <div class="metric-label">Avg Quality Score</div>
             </div>
+            <div class="metric-card" id="gpt5TokensCard" style="cursor: pointer;">
+                <div class="metric-value">-</div>
+                <div class="metric-label">Tokens</div>
+            </div>
             <div class="metric-card metric-card-with-dropdown">
                 <div class="metric-value" style="font-size: 1.5em; margin-bottom: 10px;">Features</div>
                 <button class="metric-dropdown-btn" onclick="toggleGPT5Dropdown(event)">▼</button>
@@ -2159,15 +2201,6 @@
                 <div class="metric-value" style="font-size: 1.5em; margin-bottom: 10px;">Agents</div>
             </div>
         </div>
-
-        <section>
-            <div class="info-card">
-                <h2>Executive Summary</h2>
-                <ul class="checkmark-list">
-                    <li>Quality metrics show strong performance in question quality, survey coherence, and plan quality</li>
-                </ul>
-            </div>
-        </section>
 
         <section>
             <h2>Performance Metrics</h2>
@@ -2625,6 +2658,7 @@
                             <th>Avg Score</th>
                             <th>Evidence (LLM‑Judge metrics)</th>
                             <th>Behavior Notes</th>
+                            <th>Justification</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -2633,33 +2667,37 @@
                             <td>80.5</td>
                             <td>Plan Quality 66.3, Page Distribution 90.6, Coherence 84.5</td>
                             <td>Plan quality is the weakest sub‑metric; page distribution is strong.</td>
+                            <td>The plan quality is moderate. The generated questions partially align with the prompt specifications for demographic information and the inclusion of a comment section. However, there are significant deviations from the prompt's requirements for the three main pillars and the 2-page layout.</td>
                         </tr>
                         <tr>
                             <td>Writer</td>
                             <td>82.7</td>
                             <td>Question Quality 85.3, Type Diversity 80.1</td>
                             <td>Generally good questions and diversity.</td>
-                        </tr>
-                        <tr>
-                            <td>Bilingual Alignment (Writer)</td>
-                            <td>25.9 on bilingual cases</td>
-                            <td>Bilingual Alignment mean 25.9, median 0 (11 bilingual tests; 8 scored 0)</td>
-                            <td>Bilingual alignment is the biggest gap.</td>
+                            <td> Questions are generally clear, answerable, and non-leading, with appropriate wording for target audiences. The component shows good variety in question typesThe score reflects minor gaps: some questions lack specificity, occasional wording improvements are needed</td>
                         </tr>
                         <tr>
                             <td>Critic/Fixer</td>
                             <td>84.0</td>
                             <td>Validation Quality 84.0</td>
                             <td>Solid validation, no big red flags in scores.</td>
-                        </tr>
-                        <tr>
-                            <td>Controller/Router</td>
-                            <td>80.7</td>
-                            <td>Controller Appropriateness 80.7</td>
-                            <td>Moderate; not consistently optimal routing.</td>
+                            <td></td>
                         </tr>
                     </tbody>
                 </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="gpt5TokensModal">
+        <div class="modal-content">
+            <button class="modal-close" id="closeGpt5TokensModal">&times;</button>
+            <h2 class="modal-title">Tokens</h2>
+            <div class="modal-section">
+                <p>50 eval threads with token data.<br>
+                Mean total tokens per run ~3700; median ~3474.<br>
+                Min ~2435 tokens (T24). Max ~10351 tokens (T21).<br>
+                Most runs are single‑call; one thread (T21) used 2 calls that day.</p>
             </div>
         </div>
     </div>
@@ -2820,6 +2858,28 @@
             gpt5AgentsModal.addEventListener('click', function(e) {
                 if (e.target === gpt5AgentsModal) {
                     gpt5AgentsModal.classList.remove('show');
+                }
+            });
+        }
+
+        const gpt5TokensCard = document.getElementById('gpt5TokensCard');
+        const gpt5TokensModal = document.getElementById('gpt5TokensModal');
+        const closeGpt5TokensModal = document.getElementById('closeGpt5TokensModal');
+
+        if (gpt5TokensCard && gpt5TokensModal) {
+            gpt5TokensCard.addEventListener('click', function() {
+                gpt5TokensModal.classList.add('show');
+            });
+
+            if (closeGpt5TokensModal) {
+                closeGpt5TokensModal.addEventListener('click', function() {
+                    gpt5TokensModal.classList.remove('show');
+                });
+            }
+
+            gpt5TokensModal.addEventListener('click', function(e) {
+                if (e.target === gpt5TokensModal) {
+                    gpt5TokensModal.classList.remove('show');
                 }
             });
         }
