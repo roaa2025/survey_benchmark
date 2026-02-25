@@ -519,6 +519,14 @@
             font-size: 1.2em;
         }
 
+        ul li:has(.success-card):before {
+            display: none;
+        }
+
+        ul li:has(.success-card) {
+            padding-left: 0;
+        }
+
         .checkmark-list li:before {
             content: "✓";
             color: #10b981;
@@ -2101,6 +2109,18 @@
     </div>
     </div>
 
+    <div class="analytics-dashboard" id="gpt5EditEmptyPage" style="display: none;">
+        <button class="back-button" onclick="goBackToGPT5()" style="position: fixed; top: 20px; left: 20px; background: #3b82f6; color: white; border: none; padding: 12px 20px; border-radius: 6px; cursor: pointer; font-size: 14px; z-index: 1000;">← Back</button>
+        <div class="container">
+        </div>
+    </div>
+
+    <div class="analytics-dashboard" id="gpt5RulesEmptyPage" style="display: none;">
+        <button class="back-button" onclick="goBackToGPT5()" style="position: fixed; top: 20px; left: 20px; background: #3b82f6; color: white; border: none; padding: 12px 20px; border-radius: 6px; cursor: pointer; font-size: 14px; z-index: 1000;">← Back</button>
+        <div class="container">
+        </div>
+    </div>
+
     <div class="analytics-dashboard" id="gpt5Dashboard">
         <button class="copy-button" onclick="copyGPT5Summary()">Copy Summary</button>
 
@@ -2127,17 +2147,20 @@
                 <div class="metric-value">80.0</div>
                 <div class="metric-label">Avg Quality Score</div>
             </div>
+            <div class="metric-card metric-card-with-dropdown">
+                <div class="metric-value" style="font-size: 1.5em; margin-bottom: 10px;">Features</div>
+                <button class="metric-dropdown-btn" onclick="toggleGPT5Dropdown(event)">▼</button>
+                <div class="metric-dropdown-menu" id="gpt5DropdownMenu">
+                    <a href="#" onclick="event.preventDefault(); handleGPT5Feature('edit'); return false;">edit</a>
+                    <a href="#" onclick="event.preventDefault(); handleGPT5Feature('rules'); return false;">rules</a>
+                </div>
+            </div>
         </div>
 
         <section>
             <div class="info-card">
                 <h2>Executive Summary</h2>
                 <ul class="checkmark-list">
-                    <li>Evaluation analyzed <strong>57 test scenarios</strong> from the benchmark dataset</li>
-                    <li><strong>50 test cases completed</strong> successfully (87.7% completion rate)</li>
-                    <li>Average generation time of <strong>34.2 seconds</strong> per test case</li>
-                    <li>Median generation time of <strong>31.5 seconds</strong> indicates consistent performance</li>
-                    <li>Overall quality score average of <strong>80.0/100</strong> with median of <strong>88.0</strong></li>
                     <li>Quality metrics show strong performance in question quality, survey coherence, and plan quality</li>
                 </ul>
             </div>
@@ -2156,7 +2179,6 @@
             </ul>
             <h3>Test Scenario Distribution</h3>
             <ul>
-                <li>Test IDs range from T1 to T57</li>
                 <li>Multiple scenario types covered: Core prompt handling, validation, edge cases</li>
                 <li>Mixed language support: English, Arabic, and bilingual scenarios</li>
             </ul>
@@ -2164,15 +2186,6 @@
 
         <section>
             <h2>Performance Metrics</h2>
-            <div class="success-card">
-                <h3>Generation Performance</h3>
-                <ul>
-                    <li>Mean: 34.2s</li>
-                    <li>Median: 31.5s</li>
-                    <li>Min/Max: 17.6s / 62.7s</li>
-                    <li>Standard Deviation: 10.9s</li>
-                </ul>
-            </div>
             <h3>Performance Distribution (Generation time)</h3>
             <div class="stat-bar">
                 <div class="stat-bar-label">&lt; 20 seconds</div>
@@ -2199,6 +2212,17 @@
                 <li>Most test cases (76%) complete within 20-40 seconds</li>
                 <li>Performance is consistent with low variance around the median</li>
                 <li>Longer generation times (>50s) are rare (6% of cases)</li>
+                <li>
+                    <div class="success-card">
+                        <h3>Generation Performance</h3>
+                        <ul>
+                            <li>Mean: 34.2s</li>
+                            <li>Median: 31.5s</li>
+                            <li>Min/Max: 17.6s / 62.7s</li>
+                            <li>Standard Deviation: 10.9s</li>
+                        </ul>
+                    </div>
+                </li>
             </ul>
         </section>
 
@@ -2275,13 +2299,6 @@
                     <li>Edge cases and error handling</li>
                 </ul>
             </div>
-            <h3>Evaluation Methods</h3>
-            <ul>
-                <li>LLM Judge evaluation with detailed scoring</li>
-                <li>Multi-dimensional quality assessment</li>
-                <li>Automated validation checks</li>
-                <li>Performance timing measurements</li>
-            </ul>
         </section>
 
         <section>
@@ -2296,7 +2313,6 @@
                             <li>Unsupported content - requests for PII/sensitive financial data blocked</li>
                         </ul>
                     </li>
-                    <li>4 test cases (T35, T36, T55, T57) missing overall score data - these correspond to failed generation attempts with unsupported content</li>
                     <li>Quality scores extracted from LLM Judge JSON evaluations</li>
                     <li>Failed test cases received overall_score of 0 with "No survey content to evaluate" in LLM Judge assessments</li>
                 </ul>
@@ -3046,6 +3062,74 @@ LIMITATIONS:
             }
         }
 
+        function toggleGPT5Dropdown(event) {
+            event.stopPropagation();
+            const dropdownMenu = document.getElementById('gpt5DropdownMenu');
+            const isShowing = dropdownMenu.classList.contains('show');
+            
+            if (isShowing) {
+                dropdownMenu.classList.remove('show');
+            } else {
+                dropdownMenu.classList.add('show');
+            }
+        }
+
+        function handleGPT5Feature(feature) {
+            const dropdownMenu = document.getElementById('gpt5DropdownMenu');
+            dropdownMenu.classList.remove('show');
+            
+            if (feature === 'edit') {
+                const gpt5Dashboard = document.getElementById('gpt5Dashboard');
+                const gpt5EditEmptyPage = document.getElementById('gpt5EditEmptyPage');
+                const editBenchmarkDashboard = document.getElementById('editBenchmarkDashboard');
+                const rulesBenchmarkDashboard = document.getElementById('rulesBenchmarkDashboard');
+                if (gpt5Dashboard && gpt5EditEmptyPage) {
+                    gpt5Dashboard.classList.remove('show');
+                    if (rulesBenchmarkDashboard) rulesBenchmarkDashboard.style.display = 'none';
+                    if (editBenchmarkDashboard) editBenchmarkDashboard.style.display = 'none';
+                    gpt5EditEmptyPage.style.display = 'block';
+                    gpt5EditEmptyPage.classList.add('show');
+                    window.scrollTo(0, 0);
+                }
+            } else if (feature === 'rules') {
+                const gpt5Dashboard = document.getElementById('gpt5Dashboard');
+                const gpt5RulesEmptyPage = document.getElementById('gpt5RulesEmptyPage');
+                const editBenchmarkDashboard = document.getElementById('editBenchmarkDashboard');
+                const rulesBenchmarkDashboard = document.getElementById('rulesBenchmarkDashboard');
+                if (gpt5Dashboard && gpt5RulesEmptyPage) {
+                    gpt5Dashboard.classList.remove('show');
+                    if (editBenchmarkDashboard) editBenchmarkDashboard.style.display = 'none';
+                    if (rulesBenchmarkDashboard) rulesBenchmarkDashboard.style.display = 'none';
+                    gpt5RulesEmptyPage.style.display = 'block';
+                    gpt5RulesEmptyPage.classList.add('show');
+                    window.scrollTo(0, 0);
+                }
+            }
+        }
+
+        function goBackToGPT5() {
+            const gpt5Dashboard = document.getElementById('gpt5Dashboard');
+            const gpt5EditEmptyPage = document.getElementById('gpt5EditEmptyPage');
+            const gpt5RulesEmptyPage = document.getElementById('gpt5RulesEmptyPage');
+            const rulesBenchmarkDashboard = document.getElementById('rulesBenchmarkDashboard');
+            if (gpt5Dashboard) {
+                if (gpt5EditEmptyPage) {
+                    gpt5EditEmptyPage.style.display = 'none';
+                    gpt5EditEmptyPage.classList.remove('show');
+                }
+                if (gpt5RulesEmptyPage) {
+                    gpt5RulesEmptyPage.style.display = 'none';
+                    gpt5RulesEmptyPage.classList.remove('show');
+                }
+                if (rulesBenchmarkDashboard) {
+                    rulesBenchmarkDashboard.style.display = 'none';
+                    rulesBenchmarkDashboard.classList.remove('show');
+                }
+                gpt5Dashboard.classList.add('show');
+                window.scrollTo(0, 0);
+            }
+        }
+
         function goBackToDeepSeek() {
             const deepseekDashboard = document.getElementById('deepseekDashboard');
             const editBenchmarkDashboard = document.getElementById('editBenchmarkDashboard');
@@ -3170,11 +3254,16 @@ Rules validation gate is production-ready: 127/127 correct classifications.`;
         }
 
         document.addEventListener('click', function(event) {
-            const dropdownMenu = document.getElementById('deepseekDropdownMenu');
+            const deepseekDropdownMenu = document.getElementById('deepseekDropdownMenu');
+            const gpt5DropdownMenu = document.getElementById('gpt5DropdownMenu');
             const dropdownBtn = event.target.closest('.metric-dropdown-btn');
             
-            if (!dropdownBtn && dropdownMenu && dropdownMenu.classList.contains('show')) {
-                dropdownMenu.classList.remove('show');
+            if (!dropdownBtn && deepseekDropdownMenu && deepseekDropdownMenu.classList.contains('show')) {
+                deepseekDropdownMenu.classList.remove('show');
+            }
+            
+            if (!dropdownBtn && gpt5DropdownMenu && gpt5DropdownMenu.classList.contains('show')) {
+                gpt5DropdownMenu.classList.remove('show');
             }
         });
     </script>
