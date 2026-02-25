@@ -2155,6 +2155,9 @@
                     <a href="#" onclick="event.preventDefault(); handleGPT5Feature('rules'); return false;">rules</a>
                 </div>
             </div>
+            <div class="metric-card purple" id="gpt5AgentsCard" style="cursor: pointer;">
+                <div class="metric-value" style="font-size: 1.5em; margin-bottom: 10px;">Agents</div>
+            </div>
         </div>
 
         <section>
@@ -2628,6 +2631,57 @@
         </div>
     </div>
 
+    <div class="modal-overlay" id="gpt5AgentsModal">
+        <div class="modal-content">
+            <button class="modal-close" id="closeGpt5AgentsModal">&times;</button>
+            <h2 class="modal-title">Agents Performance</h2>
+            <div class="modal-section">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Agent</th>
+                            <th>Avg Score</th>
+                            <th>Evidence (LLM‑Judge metrics)</th>
+                            <th>Behavior Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Planner</td>
+                            <td>80.5</td>
+                            <td>Plan Quality 66.3, Page Distribution 90.6, Coherence 84.5</td>
+                            <td>Plan quality is the weakest sub‑metric; page distribution is strong.</td>
+                        </tr>
+                        <tr>
+                            <td>Writer</td>
+                            <td>82.7</td>
+                            <td>Question Quality 85.3, Type Diversity 80.1</td>
+                            <td>Generally good questions and diversity.</td>
+                        </tr>
+                        <tr>
+                            <td>Bilingual Alignment (Writer)</td>
+                            <td>25.9 on bilingual cases</td>
+                            <td>Bilingual Alignment mean 25.9, median 0 (11 bilingual tests; 8 scored 0)</td>
+                            <td>Bilingual alignment is the biggest gap.</td>
+                        </tr>
+                        <tr>
+                            <td>Critic/Fixer</td>
+                            <td>84.0</td>
+                            <td>Validation Quality 84.0</td>
+                            <td>Solid validation, no big red flags in scores.</td>
+                        </tr>
+                        <tr>
+                            <td>Controller/Router</td>
+                            <td>80.7</td>
+                            <td>Controller Appropriateness 80.7</td>
+                            <td>Moderate; not consistently optimal routing.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
     <script>
         const plannerNode = document.getElementById('plannerNode');
         const plannerModal = document.getElementById('plannerModal');
@@ -2762,6 +2816,28 @@
             qualityBreakdownModal.addEventListener('click', function(e) {
                 if (e.target === qualityBreakdownModal) {
                     qualityBreakdownModal.classList.remove('show');
+                }
+            });
+        }
+
+        const gpt5AgentsCard = document.getElementById('gpt5AgentsCard');
+        const gpt5AgentsModal = document.getElementById('gpt5AgentsModal');
+        const closeGpt5AgentsModal = document.getElementById('closeGpt5AgentsModal');
+
+        if (gpt5AgentsCard && gpt5AgentsModal) {
+            gpt5AgentsCard.addEventListener('click', function() {
+                gpt5AgentsModal.classList.add('show');
+            });
+
+            if (closeGpt5AgentsModal) {
+                closeGpt5AgentsModal.addEventListener('click', function() {
+                    gpt5AgentsModal.classList.remove('show');
+                });
+            }
+
+            gpt5AgentsModal.addEventListener('click', function(e) {
+                if (e.target === gpt5AgentsModal) {
+                    gpt5AgentsModal.classList.remove('show');
                 }
             });
         }
